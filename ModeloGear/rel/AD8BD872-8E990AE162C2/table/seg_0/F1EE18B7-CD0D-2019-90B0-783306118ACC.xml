@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F1EE18B7-CD0D-2019-90B0-783306118ACC" name="telefono_Diseñador">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 22:06:34 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_17</ordsAlias>
+<abbreviation>pDesigner</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="numero" id="4AA9AFB5-A358-2DE1-4A7B-FE61349A704C">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 22:07:27 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Diseñador_cedula" id="E35672F6-CB5A-93D2-AAB6-12692FCA5B90">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 22:07:31 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8524BA7C-343F-EA3F-3311-4143AC941284" referredColumn="1AEE251D-0B32-EB83-1E4E-3B8760845ED2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="178D8319-C28C-93A5-63AA-5B5DC84BEA8B" name="telefono_Diseñador_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 22:18:19 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E35672F6-CB5A-93D2-AAB6-12692FCA5B90"/>
+<colUsage columnID="4AA9AFB5-A358-2DE1-4A7B-FE61349A704C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="81A354AD-A3A8-DB9E-150B-2305EBF452D9" name="telefono_Diseñador_Diseñador_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 22:07:31 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E35672F6-CB5A-93D2-AAB6-12692FCA5B90"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

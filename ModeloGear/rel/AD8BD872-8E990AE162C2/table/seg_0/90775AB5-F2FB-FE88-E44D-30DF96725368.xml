@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="90775AB5-F2FB-FE88-E44D-30DF96725368" name="TrabajadorEnvio">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:50:02 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<abbreviation>workerE</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nombre" id="4ADBE071-0E33-81A5-F2ED-D47DA1159EDC">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:51:01 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="correo" id="24BA0ADD-E9B1-81C7-DCFF-7E25394E4822">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:51:01 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cedula" id="64A39BAE-CF6D-EEF6-0931-D366981D9089">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:51:01 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="012E0BF2-0A8F-3157-CC03-0F57AE3129A5" name="TrabajadorEnvio_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:51:01 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="64A39BAE-CF6D-EEF6-0931-D366981D9089"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

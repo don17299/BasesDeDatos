@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="038378E4-0F5C-9D60-D47F-252244F82AA9" name="telefono_Secretaria">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:23:39 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<abbreviation>secrP</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="numero" id="9E396007-45C9-2D21-2EEA-8CA6FE9A4EEA">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:24:04 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Secretaria_cedula" id="2AD26854-EFDB-9C4F-9269-5F8011C33B2A">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:24:07 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6E0004D6-B6F6-CC99-AA8A-3279B7045CB9" referredColumn="DA565720-2B6F-CCFB-CA08-E73243A180A9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D2237D68-A74A-EB48-FA7F-92E264E4124A" name="telefono_Secretaria_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:24:17 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2AD26854-EFDB-9C4F-9269-5F8011C33B2A"/>
+<colUsage columnID="9E396007-45C9-2D21-2EEA-8CA6FE9A4EEA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5848306E-59B1-F3B8-7313-385056688A08" name="telefono_Secretaria_Secretaria_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:24:07 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2AD26854-EFDB-9C4F-9269-5F8011C33B2A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="ModeloGear" id="95D094F2-B7EA-BCA9-22B7-39C4D26EE1D4" version="3.5">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 20:52:48 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>95D094F2-B7EA-BCA9-22B7-39C4D26EE1D4</designId>
+</OSDM_Design>

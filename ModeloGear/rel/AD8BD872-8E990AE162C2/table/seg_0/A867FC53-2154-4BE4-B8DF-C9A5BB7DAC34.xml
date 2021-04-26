@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A867FC53-2154-4BE4-B8DF-C9A5BB7DAC34" name="Secretaria">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:19:51 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<abbreviation>secr</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nombre" id="F286F9F0-8FD5-04B6-DD57-AF28B421F785">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:20:35 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="correo" id="21C1876E-C953-7A3D-1EF9-9C85EE5B8F9B">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:20:35 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cedula" id="DA565720-2B6F-CCFB-CA08-E73243A180A9">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:20:35 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="849B5DAF-4785-B081-96C8-C11D4ADE9BAA" name="Secretaria_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:20:35 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DA565720-2B6F-CCFB-CA08-E73243A180A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

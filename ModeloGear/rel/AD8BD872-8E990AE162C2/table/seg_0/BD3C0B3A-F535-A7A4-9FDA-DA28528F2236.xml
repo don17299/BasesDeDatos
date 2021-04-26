@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BD3C0B3A-F535-A7A4-9FDA-DA28528F2236" name="TrabajadorFabricacion">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:56:26 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_14</ordsAlias>
+<abbreviation>workerF</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nombre" id="30CF722B-2F2B-BB5C-479E-66E4DBE673CD">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:57:27 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="correo" id="97EC5B8E-1533-77F7-0C09-5EB5B7E79C2A">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:57:27 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cedula" id="F49621B9-E1C2-2B97-46AD-5D385CA3E3E6">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:57:27 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="497C0E40-7148-010D-C1D2-3308A408E023" name="TrabajadorFabricacion_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 21:57:27 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F49621B9-E1C2-2B97-46AD-5D385CA3E3E6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
