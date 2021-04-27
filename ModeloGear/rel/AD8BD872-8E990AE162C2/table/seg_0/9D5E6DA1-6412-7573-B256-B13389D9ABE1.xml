@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9D5E6DA1-6412-7573-B256-B13389D9ABE1" name="Factura">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:54:33 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_28</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="total" id="5E3DE076-C25D-2A65-2009-479AEC643D27">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:55:17 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_diligenciamiento" id="DDAEF048-E947-5696-E719-06D39209EFF8">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:55:17 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="codigo" id="C404BD92-916D-12B1-5EEF-3C464A0EF846">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:55:17 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cliente_cedula" id="6A09021D-8E35-1908-AD11-20F2369C2F03">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:07:39 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8030DEB0-0739-D5D9-7343-F182D095CACF" referredColumn="AAB86E44-FB65-C287-B9AE-65F4EE1C2DEA"/>
+</associations>
+</Column>
+<Column name="Secretaria_cedula" id="5D9641B9-91BB-3CCF-AFD6-EF7E66B428D4">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:08:16 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5678A0D7-2E2F-7EF9-7E67-4EA5FEB32F59" referredColumn="DA565720-2B6F-CCFB-CA08-E73243A180A9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4792A482-0857-8CD9-A25C-ABD7D3C28E33" name="Factura_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:55:22 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C404BD92-916D-12B1-5EEF-3C464A0EF846"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B3B31F81-929A-1249-703B-84E3454AB653" name="Factura_Cliente_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:07:39 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6A09021D-8E35-1908-AD11-20F2369C2F03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D0325D32-9C1E-621C-33F5-77CF2626B4F7" name="Factura_Secretaria_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:08:16 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5D9641B9-91BB-3CCF-AFD6-EF7E66B428D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

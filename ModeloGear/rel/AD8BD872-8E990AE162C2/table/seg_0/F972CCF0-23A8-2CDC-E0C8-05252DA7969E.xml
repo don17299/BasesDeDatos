@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F972CCF0-23A8-2CDC-E0C8-05252DA7969E" name="Articulo">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:49:22 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_24</ordsAlias>
+<abbreviation>item</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nombre" id="E71383C0-D23A-023E-B1D9-02BFB9FCE072">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:50:22 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cantidad" id="5801DBA9-6C36-33CF-AD36-B3ADE93DCD31">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:50:22 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="EA0E94F5-3371-2158-32A7-CADC10AC8970">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:50:22 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="precio" id="BEF046F8-EC42-0717-DEA0-491A86EA4479">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:50:22 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="codigo_Articulo" id="0110E36D-360A-AF54-88FE-B746DEF77591">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:51:35 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Pedido_codigo" id="032422CB-270D-E893-D3D2-DABCC0A98377">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:55:53 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C46AA0FB-5045-414F-1D2D-1D9616CD0AEA" referredColumn="4CCAFE82-B636-AE4D-08D2-C405E22F74EF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="96C22E59-606F-5086-1143-3D735F3C8D91" name="Articulo_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:50:55 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0110E36D-360A-AF54-88FE-B746DEF77591"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D1EDDF86-41DB-14D2-C53D-AA298DCC5A0E" name="Articulo_Pedido_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:55:53 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="032422CB-270D-E893-D3D2-DABCC0A98377"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

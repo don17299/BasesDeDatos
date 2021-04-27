@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="28A31D3D-D04D-3C36-3C87-92F93BF262C0" name="Inventario_Trabajador">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:47:47 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_30</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Inventario_codigo" id="DCE9AD22-483F-6A57-2392-B807D427AF4A">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:48:01 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5619A7B9-951D-76A0-D792-CF280B333DAC" referredColumn="BC9EF849-5915-05E0-A86E-82EEC56E156C"/>
+</associations>
+</Column>
+<Column name="TrabajadorInventario_cedula" id="34756220-7534-6359-37E3-C4A8DE06F189">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:48:05 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F2648635-ABB7-277E-F0C3-A503B2F03F44" referredColumn="26479CF4-E6EE-B825-8E3F-DD602EFD892D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E8998E08-774A-2D19-E8AB-EC30C0877334" name="Inventario_Trabajador_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:48:12 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DCE9AD22-483F-6A57-2392-B807D427AF4A"/>
+<colUsage columnID="34756220-7534-6359-37E3-C4A8DE06F189"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F01418E0-F41C-EAD9-4B6C-4FDA7634F5A0" name="Inventario_Trabajador_Inventario_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:48:01 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DCE9AD22-483F-6A57-2392-B807D427AF4A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DE0250D1-3993-F540-9FAB-676E4EF58D9E" name="Inventario_Trabajador_TrabajadorInventario_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:48:05 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="34756220-7534-6359-37E3-C4A8DE06F189"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="538C0FB5-D1C4-3792-F873-9B5A67D621ED" name="Envio_TrabajadorE">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:55:10 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_31</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Envio_codigo" id="3D3F01D2-FCE7-B856-1E90-17DA404B1147">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:55:22 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A67EF26F-A9C6-87B9-69E6-A6D07153C1A7" referredColumn="EC6A6CA1-7B50-888A-4B45-1A95B0115E7B"/>
+</associations>
+</Column>
+<Column name="TrabajadorEnvio_cedula" id="8B9BE0E9-B007-6A41-263B-58F19D577216">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:55:27 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="001C68CB-4637-DD4E-D21D-62A1B9A38CBD" referredColumn="64A39BAE-CF6D-EEF6-0931-D366981D9089"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6ED7884E-F70E-E059-F4ED-3FC6F5272E23" name="Envio_TrabajadorE_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:55:34 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3D3F01D2-FCE7-B856-1E90-17DA404B1147"/>
+<colUsage columnID="8B9BE0E9-B007-6A41-263B-58F19D577216"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="75532368-6E8F-3BF9-1152-F72F51537823" name="Envio_TrabajadorE_Envio_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:55:22 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3D3F01D2-FCE7-B856-1E90-17DA404B1147"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A202D3E9-087E-2B90-D66F-B61394895735" name="Envio_TrabajadorE_TrabajadorEnvio_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:55:27 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8B9BE0E9-B007-6A41-263B-58F19D577216"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,133 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C30D8014-A906-1E5C-8292-237774A95F2D" name="Pedido">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:47:45 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_23</ordsAlias>
+<abbreviation>order</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigo" id="4CCAFE82-B636-AE4D-08D2-C405E22F74EF">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:49:00 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_diligenciado" id="E3EF8A03-EBCC-425D-0C13-568EBEA433B7">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:49:00 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_Entrega" id="C28BBD50-DD71-FD04-24C7-106A90BD477F">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:49:00 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cliente_cedula" id="A9DA7C9C-7263-6A6D-0212-82D02D8F5B29">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:00:18 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3E2F1214-AF4B-929C-DA0F-AEDA75A4C30F" referredColumn="AAB86E44-FB65-C287-B9AE-65F4EE1C2DEA"/>
+</associations>
+</Column>
+<Column name="AsesorComercial_cedula" id="B35285B1-EB65-08C3-B59C-731D23AF5008">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:00:24 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="00C6EBB7-5D7B-E622-2C6E-C1F4BA45B870" referredColumn="41D2DFAF-7E43-3C88-6B87-5C928674DDD9"/>
+</associations>
+</Column>
+<Column name="Factura_codigo" id="9256D296-AE6F-2C27-5731-B3955A82A8B6">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:03:52 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="506C66A3-3937-1F4F-A1C4-DDD3ABDCF205" referredColumn="C404BD92-916D-12B1-5EEF-3C464A0EF846"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="74F169D4-4541-00A5-9C98-E9A2103B40CF" name="Pedido_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:49:06 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4CCAFE82-B636-AE4D-08D2-C405E22F74EF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FACA6736-6F21-05CC-78B4-0190D8524E9C" name="Pedido_Cliente_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:00:18 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A9DA7C9C-7263-6A6D-0212-82D02D8F5B29"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="79812C27-3A0D-4E31-0543-FAD8E21D7309" name="Pedido_AsesorComercial_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:00:24 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B35285B1-EB65-08C3-B59C-731D23AF5008"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DDD1D138-918D-FD69-5345-B2DAAB0A0E0B" name="Pedido_Factura_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:03:52 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9256D296-AE6F-2C27-5731-B3955A82A8B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

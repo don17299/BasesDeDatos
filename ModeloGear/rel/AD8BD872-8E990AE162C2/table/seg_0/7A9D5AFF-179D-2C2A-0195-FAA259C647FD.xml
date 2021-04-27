@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7A9D5AFF-179D-2C2A-0195-FAA259C647FD" name="MateriaPrima">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:41:51 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_20</ordsAlias>
+<abbreviation>rawM</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nombre" id="5586E5FD-AA50-1CAF-CA95-894F9AB5E0F8">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:44:04 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cantidad" id="2890F97F-D743-7533-7AC1-338E6E11A613">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:44:04 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="48C96C4F-09F5-0243-A003-8F05AD93D64D">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:44:04 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="marca" id="0278E2BC-8034-FAF6-060E-F3042FF63587">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:44:04 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="codigo" id="08A18A41-0E1C-DF86-2C26-90CAE4355B4F">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:44:33 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Inventario_codigo" id="F117E6FB-E6F0-552E-8217-2B52F7AEE1AC">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:47:01 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3F7B8174-98DE-86C4-7E26-4C72B52AA159" referredColumn="BC9EF849-5915-05E0-A86E-82EEC56E156C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C714FD43-AFDA-5661-6C69-69D487211FEA" name="MateriaPrima_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:44:04 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="08A18A41-0E1C-DF86-2C26-90CAE4355B4F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="56051A61-DF60-115E-0CC5-BB4DCA858B8C" name="MateriaPrima_Inventario_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:47:01 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F117E6FB-E6F0-552E-8217-2B52F7AEE1AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

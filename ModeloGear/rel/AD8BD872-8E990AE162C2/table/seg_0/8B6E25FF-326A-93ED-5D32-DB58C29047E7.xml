@@ -1,0 +1,183 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8B6E25FF-326A-93ED-5D32-DB58C29047E7" name="Producto">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:21:16 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_19</ordsAlias>
+<abbreviation>product</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nombre" id="375EC474-791A-6CAC-6875-43ED617463CA">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:23:27 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="F3135EC5-7F2C-402C-171D-1CD104377996">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:23:27 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="precio" id="179327AC-C365-B29A-4A7A-0751573C827D">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:23:27 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cantidad" id="E28FEBFD-85B4-6B8E-CAF0-04A72FDE0307">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:23:27 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="codigo" id="5AA104D5-7106-BB12-0164-30875CFCAB36">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:23:45 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Supervisor_cedula" id="623DC364-5DA5-EE16-EB0F-E7FC1896E8EC">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:22:58 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="24D36C98-7099-7B4B-D76A-7D2BA0C1CFFB" referredColumn="6AB515FF-0CC6-5E47-4C96-9C5036492660"/>
+</associations>
+</Column>
+<Column name="Diseñador_cedula" id="49E83985-4B1C-AF25-9C1A-308403AD568C">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:23:05 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1C713BFC-0546-F4CF-5760-26D8BBF0A0F9" referredColumn="1AEE251D-0B32-EB83-1E4E-3B8760845ED2"/>
+</associations>
+</Column>
+<Column name="Inventario_codigo" id="8BB2922F-5DD1-A4AB-3125-6468C13BDEF9">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:46:57 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EC823673-96C9-445F-6FFE-7EED94506DA5" referredColumn="BC9EF849-5915-05E0-A86E-82EEC56E156C"/>
+</associations>
+</Column>
+<Column name="Pedido_codigo" id="458DF6E4-14AB-8C01-5B29-B935283F6EC5">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:50:14 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6B95D642-AD6C-3484-C026-4CC3214F8C00" referredColumn="4CCAFE82-B636-AE4D-08D2-C405E22F74EF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7ED93825-C8BC-0931-20E2-75E8F9008229" name="Producto_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:23:45 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5AA104D5-7106-BB12-0164-30875CFCAB36"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C374246C-BA43-5A4C-87B6-65D0824061FD" name="Producto_Supervisor_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:22:58 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="623DC364-5DA5-EE16-EB0F-E7FC1896E8EC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BED08DFF-7AC9-1144-D1D6-934CFB6FF413" name="Producto_Diseñador_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:23:05 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="49E83985-4B1C-AF25-9C1A-308403AD568C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C533B810-D375-2B2B-E2F2-BDA004D958E5" name="Producto_Inventario_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:46:57 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8BB2922F-5DD1-A4AB-3125-6468C13BDEF9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8D753335-5DD2-CA78-40FB-287B9EA6858D" name="Producto_Pedido_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:50:14 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="458DF6E4-14AB-8C01-5B29-B935283F6EC5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

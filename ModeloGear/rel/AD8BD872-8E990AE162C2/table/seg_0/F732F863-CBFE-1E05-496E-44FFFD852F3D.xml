@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F732F863-CBFE-1E05-496E-44FFFD852F3D" name="Producto_MateriaPrima">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:44:37 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_28</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Producto_codigo" id="A0D0A727-D413-2F49-1964-C13D7ABCB6F1">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:45:00 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="512E573D-8943-BE7B-18FC-7FF2B0D6603D" referredColumn="5AA104D5-7106-BB12-0164-30875CFCAB36"/>
+</associations>
+</Column>
+<Column name="MateriaPrima_codigo" id="8ADAA13A-E29A-FBDD-BEB8-76C8AE40A2E0">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:45:03 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6FF6B8FF-59DD-DACD-2A0E-997877D2C9F6" referredColumn="08A18A41-0E1C-DF86-2C26-90CAE4355B4F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0DCC00F8-B3AD-F4E8-A580-3F87533FF2D7" name="Producto_MateriaPrima_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:45:11 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A0D0A727-D413-2F49-1964-C13D7ABCB6F1"/>
+<colUsage columnID="8ADAA13A-E29A-FBDD-BEB8-76C8AE40A2E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="17927D87-9403-41C2-7B8C-7DCAE6A1664F" name="Producto_MateriaPrima_Producto_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:45:00 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A0D0A727-D413-2F49-1964-C13D7ABCB6F1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4E0F9ABF-3A88-51C3-DDF9-E9B3DF747354" name="Producto_MateriaPrima_MateriaPrima_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 14:45:03 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8ADAA13A-E29A-FBDD-BEB8-76C8AE40A2E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

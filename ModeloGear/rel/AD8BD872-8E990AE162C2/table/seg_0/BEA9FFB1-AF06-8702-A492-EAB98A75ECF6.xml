@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BEA9FFB1-AF06-8702-A492-EAB98A75ECF6" name="Producto_TrabajadorF">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:12:20 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_31</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TrabajadorFabricacion_cedula" id="DE5F15CA-D7B3-3104-E1BC-F9502911AB80">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:12:51 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8046C0B5-690B-5443-AF61-01FBBEAA6EDB" referredColumn="F49621B9-E1C2-2B97-46AD-5D385CA3E3E6"/>
+</associations>
+</Column>
+<Column name="Producto_codigo" id="26EBCF19-86FD-4571-B889-1955AFADCFE0">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:12:54 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9FB6F391-94FD-5ACA-D3F2-EA6D458FE77A" referredColumn="5AA104D5-7106-BB12-0164-30875CFCAB36"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B2E29589-F26D-FF3E-37E8-1B7BB0363710" name="Producto_TrabajadorF_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:13:04 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DE5F15CA-D7B3-3104-E1BC-F9502911AB80"/>
+<colUsage columnID="26EBCF19-86FD-4571-B889-1955AFADCFE0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="86C8D231-513D-0D8B-3743-039A60621CB5" name="Producto_TrabajadorF_TrabajadorFabricacion_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:12:51 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DE5F15CA-D7B3-3104-E1BC-F9502911AB80"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A52BF8A9-9EDC-F2EB-25F6-519B384938F0" name="Producto_TrabajadorF_Producto_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 15:12:54 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="26EBCF19-86FD-4571-B889-1955AFADCFE0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

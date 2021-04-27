@@ -1,0 +1,37 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1FAE8DAB-CD96-C9EF-DF37-68A296BD0EC2" name="Inventario">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:45:03 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_21</ordsAlias>
+<abbreviation>inv</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigo" id="BC9EF849-5915-05E0-A86E-82EEC56E156C">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:45:50 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BC37C603-346D-8202-66F3-C52F06BBBB22" name="Inventario_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-26 23:45:50 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC9EF849-5915-05E0-A86E-82EEC56E156C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

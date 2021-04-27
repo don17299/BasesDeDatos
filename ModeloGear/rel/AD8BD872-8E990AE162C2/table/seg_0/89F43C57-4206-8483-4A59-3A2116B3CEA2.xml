@@ -43,6 +43,17 @@
 <ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="InformeFab_codigo" id="51E91D53-3AB6-8A48-5664-83E66C38C0B0">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 00:20:24 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="18B729CA-AEAB-34B0-490E-E117E9579DF2" name="Diseñador_PK">
