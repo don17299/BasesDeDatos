@@ -111,21 +111,6 @@
 <colAssociation fkAssociation="EC823673-96C9-445F-6FFE-7EED94506DA5" referredColumn="BC9EF849-5915-05E0-A86E-82EEC56E156C"/>
 </associations>
 </Column>
-<Column name="Pedido_codigo" id="458DF6E4-14AB-8C01-5B29-B935283F6EC5">
-<createdBy>carlos</createdBy>
-<createdTime>2021-04-27 14:50:14 UTC</createdTime>
-<ownerDesignName>ModeloGear</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>250</dataTypeSize>
-<ownDataTypeParameters>250,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="6B95D642-AD6C-3484-C026-4CC3214F8C00" referredColumn="4CCAFE82-B636-AE4D-08D2-C405E22F74EF"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="7ED93825-C8BC-0931-20E2-75E8F9008229" name="Producto_PK">
@@ -167,16 +152,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="8BB2922F-5DD1-A4AB-3125-6468C13BDEF9"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="8D753335-5DD2-CA78-40FB-287B9EA6858D" name="Producto_Pedido_FK">
-<createdBy>carlos</createdBy>
-<createdTime>2021-04-27 14:50:14 UTC</createdTime>
-<ownerDesignName>ModeloGear</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="458DF6E4-14AB-8C01-5B29-B935283F6EC5"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

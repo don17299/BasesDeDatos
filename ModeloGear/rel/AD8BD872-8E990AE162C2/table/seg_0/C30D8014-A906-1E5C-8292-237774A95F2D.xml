@@ -50,7 +50,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>10</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -65,7 +65,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>10</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -84,6 +84,21 @@
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="506C66A3-3937-1F4F-A1C4-DDD3ABDCF205" referredColumn="C404BD92-916D-12B1-5EEF-3C464A0EF846"/>
+</associations>
+</Column>
+<Column name="Envio_codigo" id="1A51814E-B8A9-75C4-1C0B-4875D775D5BF">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 16:55:46 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4433B378-37A1-6A75-44EB-EEDD11AE8DBC" referredColumn="EC6A6CA1-7B50-888A-4B45-1A95B0115E7B"/>
 </associations>
 </Column>
 </columns>
@@ -127,6 +142,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="9256D296-AE6F-2C27-5731-B3955A82A8B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D916513A-47F4-BBF6-C5F5-B89F3B3CF22E" name="Pedido_Envio_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 16:55:46 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1A51814E-B8A9-75C4-1C0B-4875D775D5BF"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

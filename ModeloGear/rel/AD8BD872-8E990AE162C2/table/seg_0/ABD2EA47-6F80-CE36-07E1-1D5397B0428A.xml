@@ -31,21 +31,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Pedido_codigo" id="8B39845B-66F1-E770-F99F-73726C124912">
-<createdBy>carlos</createdBy>
-<createdTime>2021-04-27 14:50:31 UTC</createdTime>
-<ownerDesignName>ModeloGear</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>250</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="CBC4548B-EF98-B613-EBC0-48A09D0DC876" referredColumn="4CCAFE82-B636-AE4D-08D2-C405E22F74EF"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="5690C8F5-06D8-23E6-030F-ECE516CCECEE" name="Envio_PK">
@@ -57,16 +42,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="EC6A6CA1-7B50-888A-4B45-1A95B0115E7B"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="AB127E6B-ED59-9FC9-3844-8E92866011A7" name="Envio_Pedido_FK">
-<createdBy>carlos</createdBy>
-<createdTime>2021-04-27 14:50:31 UTC</createdTime>
-<ownerDesignName>ModeloGear</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="8B39845B-66F1-E770-F99F-73726C124912"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

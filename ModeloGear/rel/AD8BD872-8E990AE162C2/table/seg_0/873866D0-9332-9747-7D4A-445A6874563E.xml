@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="873866D0-9332-9747-7D4A-445A6874563E" name="Producto_Pedido">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 16:24:52 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<ordsAlias>table_32</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Producto_codigo" id="50D30D8A-4463-53FA-492F-FE77E60E2846">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 16:25:03 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F7A3BA5E-4C50-67B1-B57B-54BF5AF3A4C9" referredColumn="5AA104D5-7106-BB12-0164-30875CFCAB36"/>
+</associations>
+</Column>
+<Column name="Pedido_codigo" id="DA5D24F2-29E9-EAE4-D170-5DC9B9FB4420">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 16:25:07 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="790FC8B7-4DE0-6DFD-B5AA-5EB587A3FE18" referredColumn="4CCAFE82-B636-AE4D-08D2-C405E22F74EF"/>
+</associations>
+</Column>
+<Column name="observaciones" id="9B2AA493-D266-9EC1-B823-20758D98AD8B">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 16:51:24 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BFDE9682-B5FB-D738-B106-324CDD2A7FF0" name="Producto_Pedido_PK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 16:25:15 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="50D30D8A-4463-53FA-492F-FE77E60E2846"/>
+<colUsage columnID="DA5D24F2-29E9-EAE4-D170-5DC9B9FB4420"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B97DF80D-D047-3DAB-99E0-F652B128BEC8" name="Producto_Pedido_Producto_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 16:25:03 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="50D30D8A-4463-53FA-492F-FE77E60E2846"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E9348D7A-9963-9F87-B89B-2701AE7E14C8" name="Producto_Pedido_Pedido_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 16:25:07 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DA5D24F2-29E9-EAE4-D170-5DC9B9FB4420"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

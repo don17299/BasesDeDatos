@@ -1,0 +1,3 @@
+-Relaciones de Articulos.
+
+-pedido relacion con  envio
