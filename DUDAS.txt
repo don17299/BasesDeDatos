@@ -1,3 +1,6 @@
 -Relaciones de Articulos.
 
 -pedido relacion con  envio
+
+//observaciones de la profesora 
+- unir las tablas envio y pedidos
