@@ -1,0 +1,236 @@
+group:Uniquindio - Algebra relacional (es)
+description[[Estas son las tablas de [Algebra relacional - Tablas para trabajo del proyecto de bases de datos]
+license: [Uniquindio]()]]
+
+TelefonoSupervisor = {
+	numero:string, supervisorCedula:string
+	'3456789'	, '000'
+	'3123456'	, '001'
+	'3212342'	, '002'
+}
+
+
+Supervisor = {
+	supervisorCedula:string, nombreSupervisor:string, correo:string, informeFabCodigo:string
+	'000'	, 'supervisor0'	, 'supervisor0@mail.com'	, 'ifc0'
+	'001'	, 'supervisor1'	, 'supervisor1@mail.com'	, 'ifc1'
+	'002'	, 'supervisor2'	, 'supervisor2@mail.com'	, 'ifc2'
+}
+
+
+Producto = {
+	productoCodigo:string, nombreProducto:string, descripcion:string, precio:number, cantidad:number, supervisorCedula:string, diseniadorCedula:string, inventarioCodigo:string
+	'000'	, 'producto1'	, 'producto asi 0'	, 1000	, 2	, '000'	, '004'	, 'ic0'
+	'001'	, 'producto2'	, 'producto asi 1'	, 2000	, 3	, '002'	, '006'	, 'ic1'
+}
+
+
+ProductoMateriaPrima = {
+	productoCodigo:string, materiaPrimaCodigo:string
+	'000'	, '00'
+	'001'	, '01'
+}
+
+
+MateriaPrima = {
+	materiaPrimaCodigo:string, nombreMateriaPrima:string, cantidad:number, descripcion:string, marca:string, inventarioCodigo:string
+	'00'	, 'madera'	, 800	, 'firme robusta'	, 'maderos de san juan'	, 'ic0'
+	'01'	, 'metal'	, 500	, 'ligero antioxidante'	, 'metal gear'		, 'ic0'
+}
+
+
+MateriaPProveedor = {
+	materiaPrimaCodigo:string, proveedorCodigo:string
+	'00'	, 'c01'
+	'01'	, 'c02'
+	
+}
+
+
+Proveedor = {
+	proveedorCodigo:string, nombreProveedor:string, descripcion:string
+	'c01'	, 'pepe'	, 'el que vende rapido'
+	'c02'	, 'maderas san juan'	,'el que vende barato'
+}
+
+
+TelefonoProveedor = {
+	numero:string, proveedorCodigo:string
+	'1234567'	, 'c01'
+	'3987651'	, 'c02'
+}
+
+
+telefonoDiseniador = {
+	numero:string, diseniadorCedula:string
+	'1111111'	, '04'
+	'1111112'	, '06'
+}
+
+
+Diseniador = {
+	diseniadorCedula:string, nombreDiseniador:string, correo:string, informeFabCodigo:string
+	'04'	, 'diseñador1'	, 'diseñador1@email.com'	, 'ifc0'
+	'06'	, 'diseñador2'	, 'diseñador2@email.com'	, 'ifc1'
+}
+
+
+TelefonoTrabajadorF = {
+	numero:string, trabajadorFabricacionCedula:string
+	'312432'	, '07'
+	'312431'	, '08'
+}
+
+
+TrabajadorFabricacion = {
+	trabajadorFabricacionCedula:string, nombreTrabajadorFabricacion:string, correo:string, informeFabCodigo:string
+	'07'	, 'fabricante1'	, 'fabricante1@mail.com'	, 'ifc0'
+	'08'	, 'fabricante2'	, 'fabricante2@mail.com'	, 'ifc1'
+}
+
+
+ProductoTrabajadorF = {
+	trabajadorFabricacionCedula:string, productoCodigo:string
+	'07'	, '000'
+	'08'	, '001'
+}
+
+
+ProductoPedido = {
+	productoCodigo:string, pedidoCodigo:string, observaciones:string
+	'000'	, '002'	, 'este producto debe de ser suave'
+	'001'	, '003'	, 'ojala sea antioxidante'
+	'000'	, '001'	, 'porfavor entregar rapido'
+}
+
+
+Inventario = {
+	inventarioCodigo:string
+	'ic0'
+	'ic1'
+}
+
+
+InventarioTrabajador = {
+	inventarioCodigo:string, trabajadorInventarioCedula:string
+	'ic0'	, '09'
+	'ic1'	, '0a'
+}
+
+
+TrabajadorInventario = {
+	trabajadorInventarioCedula:string, nombreTrabajadorInventario:string, correo:string
+	'09'	, 'tInventario1'	, 'tI1@mail.com'
+	'0a'	, 'tInventario2'	, 'tI2@mail.com'
+}
+
+
+TelefonoTrabajadorI = {
+	numero:string, trabajadorInventarioCedula:string
+	'12343421'	, '09'
+	'63526482'	, '0a'
+}
+
+
+TelefonoCliente = {
+	numero:string, clienteCedula:string
+	'123426'	, '123'
+	'726218'	, '456'
+}
+
+
+Cliente = {
+	clienteCedula:string, nombreCliente:string, correo:string
+	'123'	, 'cliente1'	, 'cliente1@mail.com'
+	'456'	, 'cliente2'	, 'cliente2@mail.com'
+}
+
+
+Pedido = {
+	pedidoCodigo:string, fechaDiligenciado:date, fechaEntrega:date, clienteCedula:string, asesorComercialCedula:string, facturaCodigo:string, envioCodigo:string
+	'001'	, 2020-10-10	, 2021-04-10	, '123'	, '0b'	, 'fc0'	, 'ec0'
+	'002'	, 2020-08-11	, 2021-05-01	, '123'	, '0f'	, 'fc1'	, 'ec1'
+	'003'	, 2020-09-10	, 2021-01-11	, '456'	, '0b'	, 'fc2'	, 'ec2'
+}
+
+
+Envio = {
+	envioCodigo:string, fecha:date
+	'ec0'	, 2021-04-05
+	'ec1'	, 2021-04-29
+	'ec2'	, 2021-01-04
+}
+
+
+EnvioTrabajadorE = {
+	envioCodigo:string, trabajadorEnvioCedula:string
+	'ec0'	, '0c'
+	'ec1'	, '0d'
+	'ec2'	, '0d'
+}
+
+
+TrabajadorEnvio = {
+	trabajadorEnvioCedula:string, nombreTrabajadorEnvio:string, correo:string
+	'0c'	, 'tEnvio1'	, 'tEnvio1@mail.com'
+	'0d'	, 'tEnvio2'	, 'tEnvio2@mail.com'
+}
+
+
+TelefonoTrabajadorE = {
+	numero:string, trabajadorEnvioCedula:string
+	'128263474'	, '0c'
+	'722345677'	, '0d'
+}
+
+
+TelefonoAsesorC = {
+	numero:string, asesorComercialCedula:string
+	'12342692983'	, '0b'
+	'72621824543'	, '0f'
+}
+
+
+AsesorComercial = {
+	asesorComercialCedula:string, nombreAsesorComercial:string, correo:string, tipo:string
+	'0b'	, 'aComercial1'	, 'ac1@email.com'	, 'tipo1'
+	'0f'	, 'aComercial2'	, 'ac2@email.com'	, 'tipo2'
+}
+
+
+Pago = {
+	codigo:string, concepto:string, total:number, fechaDiligenciamento:date, facturaCodigo:string, clienteCedula:string, asesorComercialCedula:string
+	'cp0'	, 'concepto 1'	, 100000	, 2021-04-05	, 'fc0'	, '123'	, '0b'
+	'cp1'	, 'concepto 2'	, 2000000	, 2021-06-06	, 'fc1'	, '123'	, '0f'
+	
+}
+
+
+Factura = {
+	total:number, fechaDiligenciamiento:date, facturaCodigo:string, clienteCedula:string, secretariaCedula:string, pedidoCodigo:string
+	10000	, 2021-03-05	, 'cf01'	, '123'	, '0e'	, '001'
+	300000	, 2021-02-10	, 'cf02'	, '123' , '0h'	, '002'
+	
+}
+
+
+Articulo = {
+	codigoArticulo:string, nombreArticulo:string, cantidad:number, descripcion:string, precio:number, pedidoCodigo:string
+	'ac0'	, 'cama'	, 100	, 'dormir'	, 800000	, '001'
+	'ac1'	, 'sofas'	, 200	, 'sentarse'	, 500000	, '002'
+}
+
+
+TelefonoSecretaria = {
+	numero:string, secretariaCedula:string
+	'0083723'	, '0e'
+	'0008281'	, '0h'
+	'8273910'	, '0h'
+}
+
+
+Secretaria = {
+	secretariaCedula:string, nombreSecretaria:string, correo:string
+	'0e'	, 'secretaria1'	, 'secretaria1@email.com'
+	'0h'	, 'secretaria2' , 'secretaria2@email.com'
+}
