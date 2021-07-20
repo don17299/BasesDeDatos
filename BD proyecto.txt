@@ -12,16 +12,18 @@ TelefonoSupervisor = {
 
 Supervisor = {
 	supervisorCedula:string, nombreSupervisor:string, correo:string, informeFabCodigo:string
-	'000'	, 'supervisor0'	, 'supervisor0@mail.com'	, 'ifc0'
-	'001'	, 'supervisor1'	, 'supervisor1@mail.com'	, 'ifc1'
-	'002'	, 'supervisor2'	, 'supervisor2@mail.com'	, 'ifc2'
+	'000'	, 'Carlos'	, 'supervisor0@mail.com'	, 'ifc0'
+	'001'	, 'Jorge'	, 'supervisor1@mail.com'	, 'ifc1'
+	'002'	, 'Roberto'	, 'supervisor2@mail.com'	, 'ifc2'
 }
 
 
 Producto = {
 	productoCodigo:string, nombreProducto:string, descripcion:string, precio:number, cantidad:number, supervisorCedula:string, diseniadorCedula:string, inventarioCodigo:string
-	'000'	, 'producto1'	, 'producto asi 0'	, 1000	, 2	, '000'	, '004'	, 'ic0'
-	'001'	, 'producto2'	, 'producto asi 1'	, 2000	, 3	, '002'	, '006'	, 'ic1'
+	'000'	, 'producto1'	, 'producto asi 0'	, 1000	, 2	, '000'	, '05'	, 'ic0'
+	'001'	, 'producto2'	, 'producto asi 1'	, 2000	, 3	, '002'	, '04'	, 'ic1'
+	'002'	, 'producto3'	, 'producto asi 2'	, 2000	, 3	, '002'	, '04'	, 'ic1'
+	'003'	, 'producto4'	, 'producto asi 3'	, 2000	, 3	, '000'	, '06'	, 'ic1'
 }
 
 
@@ -70,8 +72,9 @@ telefonoDiseniador = {
 
 Diseniador = {
 	diseniadorCedula:string, nombreDiseniador:string, correo:string, informeFabCodigo:string
-	'04'	, 'diseñador1'	, 'diseñador1@email.com'	, 'ifc0'
-	'06'	, 'diseñador2'	, 'diseñador2@email.com'	, 'ifc1'
+	'04'	, 'Juan'	, 'diseñador1@email.com'	, 'ifc0'
+	'06'	, 'Joseph'	, 'diseñador2@email.com'	, 'ifc1'
+	'05'	, 'Ermenegildo'	, 'diseñador3@email.com'	, 'ifc1'
 }
 
 
@@ -143,21 +146,23 @@ Cliente = {
 	clienteCedula:string, nombreCliente:string, correo:string
 	'123'	, 'cliente1'	, 'cliente1@mail.com'
 	'456'	, 'cliente2'	, 'cliente2@mail.com'
+	'321' , 'cliente3'  , 'cliente3@mail.com'
 }
 
 
 Pedido = {
 	pedidoCodigo:string, fechaDiligenciado:date, fechaEntrega:date, clienteCedula:string, asesorComercialCedula:string, facturaCodigo:string, envioCodigo:string
 	'001'	, 2020-10-10	, 2021-04-10	, '123'	, '0b'	, 'fc0'	, 'ec0'
-	'002'	, 2020-08-11	, 2021-05-01	, '123'	, '0f'	, 'fc1'	, 'ec1'
+	'002'	, 2020-08-11	, 2021-05-01	, '321'	, '0f'	, 'fc1'	, 'ec1'
 	'003'	, 2020-09-10	, 2021-01-11	, '456'	, '0b'	, 'fc2'	, 'ec2'
+	'004'	, 2020-09-10	, 2021-01-11	, '456'	, '0b'	, 'fc2'	, 'ec2'
 }
 
 
 Envio = {
 	envioCodigo:string, fecha:date
 	'ec0'	, 2021-04-05
-	'ec1'	, 2021-04-29
+	'ec1'	, 2021-07-29
 	'ec2'	, 2021-01-04
 }
 
@@ -195,21 +200,25 @@ AsesorComercial = {
 	asesorComercialCedula:string, nombreAsesorComercial:string, correo:string, tipo:string
 	'0b'	, 'aComercial1'	, 'ac1@email.com'	, 'tipo1'
 	'0f'	, 'aComercial2'	, 'ac2@email.com'	, 'tipo2'
+	'0z'	, 'aComercial3'	, 'ac3@email.com'	, 'tipo3'
 }
 
 
 Pago = {
 	codigo:string, concepto:string, total:number, fechaDiligenciamento:date, facturaCodigo:string, clienteCedula:string, asesorComercialCedula:string
-	'cp0'	, 'concepto 1'	, 100000	, 2021-04-05	, 'fc0'	, '123'	, '0b'
-	'cp1'	, 'concepto 2'	, 2000000	, 2021-06-06	, 'fc1'	, '123'	, '0f'
+	'cp0'	, 'concepto 1'	, 100000	, 2021-04-05	, 'cf01'	, '123'	, '0b'
+	'cp1'	, 'concepto 2'	, 2000000	, 2021-06-06	, 'cf02'	, '321'	, '0f'
+	'cp2'	, 'concepto 3'	, 3000000	, 2021-06-08	, 'cf03'	, '123'	, '0f'
 	
 }
 
 
 Factura = {
 	total:number, fechaDiligenciamiento:date, facturaCodigo:string, clienteCedula:string, secretariaCedula:string, pedidoCodigo:string
-	10000	, 2021-03-05	, 'cf01'	, '123'	, '0e'	, '001'
-	300000	, 2021-02-10	, 'cf02'	, '123' , '0h'	, '002'
+	1000000	, 2021-03-05	, 'cf01'	, '123'	, '0e'	, '001'
+	300000	, 2021-02-10	, 'cf02'	, '321' , '0h'	, '002'
+	100000	, 2021-03-05	, 'cf03'	, '456'	, '09'	, '004'
+	30000	, 2021-02-10	, 'cf04'	, '321' , '0h'	, '003'
 	
 }
 
@@ -226,6 +235,7 @@ TelefonoSecretaria = {
 	'0083723'	, '0e'
 	'0008281'	, '0h'
 	'8273910'	, '0h'
+	'8123123'	, '09'
 }
 
 
@@ -233,4 +243,5 @@ Secretaria = {
 	secretariaCedula:string, nombreSecretaria:string, correo:string
 	'0e'	, 'secretaria1'	, 'secretaria1@email.com'
 	'0h'	, 'secretaria2' , 'secretaria2@email.com'
+	'09'	, 'secretaria3' , 'secretaria3@email.com'
 }

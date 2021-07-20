@@ -72,20 +72,6 @@
 <colAssociation fkAssociation="00C6EBB7-5D7B-E622-2C6E-C1F4BA45B870" referredColumn="41D2DFAF-7E43-3C88-6B87-5C928674DDD9"/>
 </associations>
 </Column>
-<Column name="Factura_codigo" id="9256D296-AE6F-2C27-5731-B3955A82A8B6">
-<createdBy>carlos</createdBy>
-<createdTime>2021-04-27 15:03:52 UTC</createdTime>
-<ownerDesignName>ModeloGear</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="506C66A3-3937-1F4F-A1C4-DDD3ABDCF205" referredColumn="C404BD92-916D-12B1-5EEF-3C464A0EF846"/>
-</associations>
-</Column>
 <Column name="Envio_codigo" id="1A51814E-B8A9-75C4-1C0B-4875D775D5BF">
 <createdBy>carlos</createdBy>
 <createdTime>2021-04-27 16:55:46 UTC</createdTime>
@@ -94,7 +80,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>250</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -132,16 +118,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="B35285B1-EB65-08C3-B59C-731D23AF5008"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="DDD1D138-918D-FD69-5345-B2DAAB0A0E0B" name="Pedido_Factura_FK">
-<createdBy>carlos</createdBy>
-<createdTime>2021-04-27 15:03:52 UTC</createdTime>
-<ownerDesignName>ModeloGear</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="9256D296-AE6F-2C27-5731-B3955A82A8B6"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="D916513A-47F4-BBF6-C5F5-B89F3B3CF22E" name="Pedido_Envio_FK">

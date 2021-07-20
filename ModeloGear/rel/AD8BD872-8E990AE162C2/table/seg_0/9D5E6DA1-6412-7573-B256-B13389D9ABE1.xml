@@ -30,16 +30,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="codigo" id="C404BD92-916D-12B1-5EEF-3C464A0EF846">
-<createdBy>carlos</createdBy>
-<createdTime>2021-04-26 23:55:17 UTC</createdTime>
-<ownerDesignName>ModeloGear</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="Cliente_cedula" id="6A09021D-8E35-1908-AD11-20F2369C2F03">
 <createdBy>carlos</createdBy>
 <createdTime>2021-04-27 15:07:39 UTC</createdTime>
@@ -70,6 +60,21 @@
 <colAssociation fkAssociation="5678A0D7-2E2F-7EF9-7E67-4EA5FEB32F59" referredColumn="DA565720-2B6F-CCFB-CA08-E73243A180A9"/>
 </associations>
 </Column>
+<Column name="Pedido_codigo" id="56DBD6C4-9896-0B89-F041-AC67E6121281">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 23:40:30 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E1D31461-42B2-3DCF-6910-03451D6098A1" referredColumn="4CCAFE82-B636-AE4D-08D2-C405E22F74EF"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="4792A482-0857-8CD9-A25C-ABD7D3C28E33" name="Factura_PK">
@@ -80,7 +85,7 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="C404BD92-916D-12B1-5EEF-3C464A0EF846"/>
+<colUsage columnID="56DBD6C4-9896-0B89-F041-AC67E6121281"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="B3B31F81-929A-1249-703B-84E3454AB653" name="Factura_Cliente_FK">
@@ -101,6 +106,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="5D9641B9-91BB-3CCF-AFD6-EF7E66B428D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D93DC49C-DAD6-F50B-0ED4-17A3137B8932" name="Factura_Pedido_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 23:40:30 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="56DBD6C4-9896-0B89-F041-AC67E6121281"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

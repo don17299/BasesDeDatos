@@ -43,17 +43,20 @@
 <ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="tipo" id="496AD3DA-DF4E-B76A-2A2B-94CC6165CEBE">
+<Column name="Tipo_codigo" id="EC5F0E87-2AF0-23FD-07CE-D2D689703FA7">
 <createdBy>carlos</createdBy>
-<createdTime>2021-04-26 21:07:17 UTC</createdTime>
+<createdTime>2021-04-27 23:48:34 UTC</createdTime>
 <ownerDesignName>ModeloGear</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>250</dataTypeSize>
-<ownDataTypeParameters>250,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5F6F4853-A1C8-D8C9-A845-A3C09B7B3F8B" referredColumn="A1265E9B-588E-EEE5-6E1E-BB91137C5C10"/>
+</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -66,6 +69,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="41D2DFAF-7E43-3C88-6B87-5C928674DDD9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="091B7B61-0620-1EEE-006F-1CC42B541D55" name="AsesorComercial_Tipo_FK">
+<createdBy>carlos</createdBy>
+<createdTime>2021-04-27 23:48:34 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EC5F0E87-2AF0-23FD-07CE-D2D689703FA7"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
