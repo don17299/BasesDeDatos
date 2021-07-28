@@ -23,7 +23,14 @@ public class Conexion {
 
     public void hacerConsulta(String consulta){
         try{
-            result= state.executeQuery("select * from ");
+            result= state.executeQuery(consulta);
+            while(result.next()){
+                System.out.println("Cliente:");
+                System.out.println(result.getString(1));
+                System.out.println(result.getString(2));
+                System.out.println(result.getString(3));
+
+            }
 
         }catch(SQLException ex){
             System.out.println("Error al abrir Conexión: " + ex.getMessage());
