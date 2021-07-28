@@ -8,7 +8,7 @@ public class Conexion {
 
     private final String url = "jdbc:mysql://localhost/gear";
     private final String usuario = "root";
-    private final String password = "root1729";
+    private final String password = "rootroot";
 
     public Conexion(){
         try{
