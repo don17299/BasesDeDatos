@@ -54,7 +54,6 @@ public class CRUDPedido {
 
     public void switchPedido(int opcion){
         String fechaD="";
-        String fechaE="";
         String codigo="";
         String cedAsesor;
         String cedCliente;
@@ -67,15 +66,13 @@ public class CRUDPedido {
                 codigo = SCANNER.nextLine();
                 if (-1 == buscarPedido(codigo)){
                     fechaD = LocalDate.now().toString();//Date(new P);
-                    System.out.println("Ingrese la fecha de entega:");
-                    fechaE = SCANNER.nextLine();
                     System.out.println("Ingrese la cedula del Cliente:");
                     cedCliente = SCANNER.nextLine();
                     System.out.println("Ingrese la cedula del Asesor:");
                     cedAsesor = SCANNER.nextLine();
                     System.out.println("Ingrese el codigo del Envio:");
                     envioCodigo = SCANNER.nextLine();
-                    crearPedido(codigo,fechaD,fechaE,cedCliente,cedAsesor,envioCodigo);
+                    crearPedido(codigo,fechaD,cedCliente,cedAsesor,envioCodigo);
                 } else {
                     System.out.println("El Pedido ya existe");
                 }
@@ -84,15 +81,13 @@ public class CRUDPedido {
                 System.out.println("Ingrese el codigo del  Pedido a modificar:");
                 codigo = SCANNER.nextLine();
                 if (0 == buscarPedido(codigo)){
-                    System.out.println("Ingrese la fecha de entega:");
-                    fechaE = SCANNER.nextLine();
                     System.out.println("Ingrese la cedula del Cliente:");
                     cedCliente = SCANNER.nextLine();
                     System.out.println("Ingrese la cedula del Asesor:");
                     cedAsesor = SCANNER.nextLine();
                     System.out.println("Ingrese el codigo del Envio:");
                     envioCodigo = SCANNER.nextLine();
-                    modificarPedido(codigo,fechaE,cedCliente,cedAsesor,envioCodigo);
+                    modificarPedido(codigo,cedCliente,cedAsesor,envioCodigo);
                 } else {
                     System.out.println("Asesor comercial inexistente");
                 }
@@ -127,16 +122,15 @@ public class CRUDPedido {
 
     }
 
-    public void crearPedido(String codigo, String fechaD, String fechaE,String cedCliente, String cedAsesor,String envioCodigo){
+    public void crearPedido(String codigo, String fechaD,String cedCliente, String cedAsesor,String envioCodigo){
         try {
-            pState = conn.conexion.prepareStatement("insert into pedido values(?,?,?,?,?,?)");
+            pState = conn.conexion.prepareStatement("insert into pedido values(?,?,?,?,?)");
 
             pState.setString(1,codigo);
             pState.setString(2,fechaD);
-            pState.setString(3,fechaE);
-            pState.setString(4,cedCliente);
-            pState.setString(5,cedAsesor);
-            pState.setString(6,envioCodigo);
+            pState.setString(3,cedCliente);
+            pState.setString(4,cedAsesor);
+            pState.setString(5,envioCodigo);
             pState.executeUpdate();
             System.out.println("Pedido creado");
         }catch (Exception e){
@@ -155,10 +149,9 @@ public class CRUDPedido {
                 System.out.println("Pedido Encontrado");
                 System.out.println("Codigo: " + result.getString(1)
                         + "\t||Fecha Diligenciamiento: " + result.getString(2)
-                        + "\t||Fecha Entrega: " + result.getString(3)
-                        + "\t||Cedula Cliente: " + result.getString(4)
-                        + "\t||Cedula Asesor: " + result.getString(5)
-                        + "\t||Codigo Envio: " + result.getString(6));
+                        + "\t||Cedula Cliente: " + result.getString(3)
+                        + "\t||Cedula Asesor: " + result.getString(4)
+                        + "\t||Codigo Envio: " + result.getString(5));
 
                 encontrado=0;
             }else{
@@ -170,14 +163,13 @@ public class CRUDPedido {
         return encontrado;
     }
 
-    public void modificarPedido(String codigo,String fechaE,String cedCliente, String cedAsesor,String envioCodigo){
+    public void modificarPedido(String codigo,String cedCliente, String cedAsesor,String envioCodigo){
         try {
-            pState = conn.conexion.prepareStatement("update pedido set fecha_entrega=?, cliente_cedula=?, asesor_cedula=?, envio_codigo=? where codigo=?");
-            pState.setString(1,fechaE);
-            pState.setString(2,cedCliente);
-            pState.setString(3,cedAsesor);
-            pState.setString(4,envioCodigo);
-            pState.setString(5,codigo);
+            pState = conn.conexion.prepareStatement("update pedido set cliente_cedula=?, asesor_cedula=?, envio_codigo=? where codigo=?");
+            pState.setString(1,cedCliente);
+            pState.setString(2,cedAsesor);
+            pState.setString(3,envioCodigo);
+            pState.setString(4,codigo);
             int a = pState.executeUpdate();
             if(a!=0) {
                 System.out.println("Pedido Actualizado");
@@ -208,10 +200,9 @@ public class CRUDPedido {
             while(result.next()){
                 System.out.println("Codigo: " + result.getString(1)
                         + "\t||Fecha Diligenciamiento: " + result.getString(2)
-                        + "\t||Fecha Entrega: " + result.getString(3)
-                        + "\t||Cedula Cliente: " + result.getString(4)
-                        + "\t||Cedula Asesor: " + result.getString(5)
-                        + "\t||Codigo Envio: " + result.getString(6));
+                        + "\t||Cedula Cliente: " + result.getString(3)
+                        + "\t||Cedula Asesor: " + result.getString(4)
+                        + "\t||Codigo Envio: " + result.getString(5));
             }
         }catch (Exception e){
             e.printStackTrace();

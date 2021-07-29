@@ -8,13 +8,13 @@ public class Conexion {
 
     private final String url = "jdbc:mysql://localhost/gear";
     private final String usuario = "root";
-    private final String password = "rootroot";
+    private final String password = "root1729";
 
     public Conexion(){
         try{
             Class.forName("com.mysql.cj.jdbc.Driver"); // De esta forma cargamos la clase Driver de MySQL.
             conexion = DriverManager.getConnection(url, usuario, password);
-            System.out.println("Conexión Exitosa");
+            System.out.println("Conexión a la Base de Datos Exitosa");
             state=conexion.createStatement();
         }catch(ClassNotFoundException | SQLException ex){
             System.out.println("Error al abrir Conexión: " + ex.getMessage());

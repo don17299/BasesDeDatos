@@ -58,6 +58,17 @@
 <colAssociation fkAssociation="5F6F4853-A1C8-D8C9-A845-A3C09B7B3F8B" referredColumn="A1265E9B-588E-EEE5-6E1E-BB91137C5C10"/>
 </associations>
 </Column>
+<Column name="sueldo" id="F67DBA49-0695-2476-31EC-ED8A9AA15590">
+<createdBy>carlos</createdBy>
+<createdTime>2021-07-29 14:06:04 UTC</createdTime>
+<ownerDesignName>ModeloGear</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="058251F5-F5C5-8CFB-40A3-412480828ACB" name="AsesorComercial_PK">

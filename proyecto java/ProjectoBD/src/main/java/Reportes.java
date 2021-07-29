@@ -17,6 +17,7 @@ public class Reportes {
 
     //simples
     public String repoClientesResgistrados(){
+        //mostrar los correos de los clientes registrados
         String cadenaConsulta = "";
 
         try{
@@ -33,6 +34,7 @@ public class Reportes {
     }
 
     public String reportarAsesoresContratados(){
+        //mostrar los asesores con su sueldo
         String cadenaConsulta = "";
 
         try{
@@ -51,6 +53,7 @@ public class Reportes {
     }
 
     public String repoProductos(){
+        //Mostrar todos los productos registrados en stock
         String cadenaConsulta = "";
 
         try{
@@ -79,12 +82,12 @@ public class Reportes {
 
     public String repoIntermedia1(){
         //seleccionar los 5 empleados que ganen mas, de los empleados que sean asesores de tipo Movil,
-        // y ordenarlos de forma desendente mente
+        // y ordenarlos de forma ascendente
         String cadenaConsulta = "";
 
         try{
             result = state.executeQuery("select h.nombre, h.sueldo from (select a.nombre, sueldo from asesor a join tipo_asesor t on a.tipo_codigo=t.codigo " +
-                    "where t.nombre='Movil' order by sueldo desc) h order by sueldo limit 1");//
+                    "where t.nombre='Movil' order by sueldo desc) h order by sueldo limit 5");//
 
             cadenaConsulta +="Los asesores que tienen el mayor sueldo :\n\n";
             while(result.next()){
@@ -101,16 +104,16 @@ public class Reportes {
 
     public String repoComprasClientes(){
         //Seleccionar todos los clientes que tengan compras inferiores
-        // a “100.000” junto con los clientes que tengan compras mayores a “900.000”
+        // a “1.500.000” junto con los clientes que tengan compras mayores a “2.000.000”
         /**
          * πnombreCliente,clienteCedula σtotal>900000 (Cliente⨝Factura)∪πnombreCliente,clienteCedula σtotal<100000 (Cliente⨝Factura)
          */
         String cadenaConsulta = "";
 
         try{
-            result = state.executeQuery("select c.nombre, c.cedula from cliente c join factura f on c.cedula=f.cliente_cedula where f.total>900000 " +
-                    "union select cd.nombre, cd.cedula from cliente cd join factura fd on cd.cedula=fd.cliente_cedula where fd.total>100000");
-            cadenaConsulta +="Productos Supervisados por Fred y diseñados por Olga:\n\n";
+            result = state.executeQuery("select c.nombre, c.cedula from cliente c join factura f on c.cedula=f.cliente_cedula where f.total>2000000 " +
+                    "union select cd.nombre, cd.cedula from cliente cd join factura fd on cd.cedula=fd.cliente_cedula where fd.total<1500000");
+            cadenaConsulta +="Clientes con compras inferiores a 1500000 y mayores a 2000000:\n\n";
             while(result.next()){
                 cadenaConsulta += "Nombre cliente: "+result.getString(1)
                         +"\nCedula cliente: "+result.getString(2)
@@ -131,7 +134,7 @@ public class Reportes {
             result = state.executeQuery("select t.nombre, count(cedula) " +
                     "from asesor ase right join tipo_asesor t on ase.tipo_codigo = t.codigo " +
                     "group by t.nombre");
-            cadenaConsulta +="Productos Supervisados por Fred y diseñados por Olga:\n\n";
+            cadenaConsulta +="Cantidad de Asesores por tipo de Asesor:\n\n";
             while(result.next()){
                 cadenaConsulta += "Tipo Asesor: "+result.getString(1)
                         +"\nNumero de Asesores: "+result.getInt(2)
@@ -144,7 +147,7 @@ public class Reportes {
     }
 
     public String repoNominaTrabajadores(){
-        //contar la cantidad de asesores que hay por cada tipo
+        //Nomina de todos los trabajadores
         String cadenaConsulta = "";
 
         try{
@@ -192,8 +195,8 @@ public class Reportes {
 
         try{
             result = state.executeQuery("select c.nombre, c.cedula from cliente c join factura f on c.cedula=f.cliente_cedula where f.total>" +
-                    "(select f.total from cliente cd join factura fd on cd.cedula=fd.cliente_cedula where cd.nombre like '%Juan%') ");
-            cadenaConsulta +=":\nClientes con compras mayores a Juan:\n";
+                    "(select fd.total from cliente cd join factura fd on cd.cedula=fd.cliente_cedula where cd.nombre like '%Jorge%') ");
+            cadenaConsulta +="\nClientes con compras mayores a Jorge:\n";
             while(result.next()){
                 cadenaConsulta += "Nomina: "+result.getString(1)
                         +"\tCedula: "+result.getString(2)
@@ -210,7 +213,7 @@ public class Reportes {
         String cadenaConsulta = "";
 
         try{
-            result = state.executeQuery("");
+            result = state.executeQuery("select ");
             cadenaConsulta +="Nomina de la empresa Gear:\n\n";
             while(result.next()){
                 cadenaConsulta += "Nomina: "+result.getInt(1)

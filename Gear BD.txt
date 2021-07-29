@@ -22,7 +22,7 @@ create table telefono_trabajador_env(numero varchar(10) not null, trabajador_env
 create table inventario(codigo varchar(250) not null, fecha_inv date, primary key (codigo));
 create table envio(codigo varchar(250) not null, fecha_env date, lugar_entrega varchar(250), primary key (codigo));
 create table materia_prima(nombre varchar(250) not null, cantidad integer not null, descripcion varchar(250), marca varchar(250) not null, codigo varchar(250), inventario_codigo varchar(250), primary key(codigo), foreign key(inventario_codigo) references inventario(codigo));
-create table pedido(codigo varchar(250) not null, fecha_diligenciado date, fecha_entrega date, cliente_cedula varchar(10) not null, asesor_cedula varchar(10) not null, envio_codigo varchar(250) not null, primary key(codigo), foreign key(cliente_cedula) references cliente(cedula), foreign key(asesor_cedula) references asesor(cedula), foreign key(envio_codigo) references envio(codigo));
+create table pedido(codigo varchar(250) not null, fecha_diligenciado date, cliente_cedula varchar(10) not null, asesor_cedula varchar(10) not null, envio_codigo varchar(250) not null, primary key(codigo), foreign key(cliente_cedula) references cliente(cedula), foreign key(asesor_cedula) references asesor(cedula), foreign key(envio_codigo) references envio(codigo));
 create table articulo(nombre varchar(250), cantidad integer not null, descripcion varchar(250), precio float not null, codigo varchar(250) not null, pedido_codigo varchar(250) not null, primary key(codigo), foreign key(pedido_codigo) references pedido(codigo));
 create table producto(nombre varchar(250) not null, descripcion varchar(250) not null, precio float not null, cantidad integer not null, codigo varchar(250) not null, supervisor_cedula varchar(10) not null, diseñador_cedula varchar(10) not null, inventario_codigo varchar(250) not null, primary key(codigo), foreign key(supervisor_cedula) references supervisor(cedula), foreign key(diseñador_cedula) references diseñador(cedula), foreign key(inventario_codigo) references inventario(codigo));
 create table factura(total float not null, fecha_diligenciamiento date, cliente_cedula varchar(10) not null, secretaria_cedula varchar(10) not null, pedido_codigo varchar(250) not null, primary key(pedido_codigo), foreign key(pedido_codigo) references pedido(codigo), foreign key(secretaria_cedula) references secretaria(cedula), foreign key(cliente_cedula) references cliente(cedula));
@@ -38,23 +38,24 @@ create table materia_prima_proveedor(materia_prima_codigo varchar(250) not null,
 
 insert into supervisor values("Alan","sup1@mail.com","1100398910",900000);
 insert into telefono_supervisor values("3107890789","1100398910");
-insert into supervisor values("Fred","sup2@mail.com","1100398888",900000);
-insert into supervisor values("Ivan","sup3@mail.com","1112398910",900000);
-insert into supervisor values("Melissa","sup4@mail.com","4100398910",900000);
+insert into supervisor values("Fred","sup2@mail.com","1100398888",800000);
+insert into supervisor values("Ivan","sup3@mail.com","1112398910",700000);
+insert into supervisor values("Melissa","sup4@mail.com","4100398910",500000);
 insert into telefono_supervisor values("3117734589","4100398910");
+insert into supervisor values("Carlos","abc@mail.com","1234567890",1000000);
 
-insert into diseñador values("Diego","dis1@mail.com","1100398911",800000);
+insert into diseñador values("Diego","dis1@mail.com","1100398911",900000);
 insert into telefono_diseñador values("3107890781","1100398911");
 insert into diseñador values("Jhan","dis2@mail.com","1100398882",800000);
-insert into diseñador values("Olga","dis3@mail.com","1112398913",800000);
-insert into diseñador values("Omar","dis4@mail.com","4100398914",800000);
+insert into diseñador values("Olga","dis3@mail.com","1112398913",600000);
+insert into diseñador values("Omar","dis4@mail.com","4100398914",500000);
 insert into telefono_diseñador values("3107890782","4100398914");
 
-insert into operario values("Frank","op1@mail.com","1100398915",800000);
+insert into operario values("Frank","op1@mail.com","1100398915",900000);
 insert into telefono_operario values("3107890783","1100398915");
 insert into operario values("Maria","op2@mail.com","1100398886",800000);
-insert into operario values("Jorge","op3@mail.com","1112398917",800000);
-insert into operario values("Alice","op4@mail.com","4100398918",800000);
+insert into operario values("Jorge","op3@mail.com","1112398917",700000);
+insert into operario values("Alice","op4@mail.com","4100398918",700000);
 insert into telefono_operario values("3107890784","4100398918");
 
 insert into cliente values("Carlos Mario","charlie@mail.com","1100398919");
@@ -67,11 +68,11 @@ insert into telefono_cliente values("3107890786","4100398912");
 insert into tipo_asesor values("Movil","Se mueve en varios locales de la ciudad","123");
 insert into tipo_asesor values("Estatico","Atiende puestos fijo de gear","124");
 
-insert into asesor values("Roger","as1@mail.com","1100398910","123",900000);
+insert into asesor values("Roger","as1@mail.com","1100398910","123",1000000);
 insert into telefono_asesor values("3107890787","1100398910");
 insert into asesor values("Ichigo","as2@mail.com","1100398888","124",900000);
-insert into asesor values("Jotaro","as3@mail.com","1112398910","124",900000);
-insert into asesor values("Hisoka","as4@mail.com","4100398910","123",900000);
+insert into asesor values("Jotaro","as3@mail.com","1112398910","124",800000);
+insert into asesor values("Hisoka","as4@mail.com","4100398910","123",700000);
 insert into telefono_asesor values("3107890788","4100398910");
 
 insert into secretaria values("Sarah","sec1@mail.com","1100398910",900000);
@@ -106,13 +107,18 @@ insert into inventario values("123i","2020-09-10");
 insert into inventario values("124i","2021-01-15");
 insert into inventario values("125i","2019-12-08");
 
-insert into envio values("123e","2020-10-10","La casa de tu jefa");
+insert into envio values("123e","2021-10-10","envio  al lugar 1");
+insert into envio values("124e","2021-10-11","envio al lugar 2");
+insert into envio values("125e","2021-10-12","envio al lugar 3");
 
 insert into materia_prima values("Madera de roble",500,"Madera de roble por toneladas","los madereros","123m","123i");
 insert into materia_prima values("Tela de nilon",1000,"Tela de nilon por kg","los teloneros","124m","124i");
 insert into materia_prima values("Colchones ortopedicos",500,"Colchones por unidades","los cameros","125m","125i");
 
-insert into pedido values("123p","2021-06-28","2021-07-28","1100398919","1100398888","123e");
+insert into pedido values("123p","2021-06-28","1100398919","1100398888","123e");
+insert into pedido values("124p","2021-08-28","1100398810","4100398910","124e");
+insert into pedido values("125p","2021-09-28","4100398912","4100398910","125e");
+insert into pedido values("126p","2021-10-28","1100398919","1100398888","123e");
 
 insert into articulo values("Almohada de One piece",1,"Almohada personalizada de onepiece",50000,"art1","123p");
 insert into articulo values("sabanas De oro",3,"Sabanas recubiertas de oro",900000,"art2","123p");
@@ -121,7 +127,9 @@ insert into producto values("cama","Cama estandar",400000,90,"123pro","110039891
 insert into producto values("silla","silla pequeña",40000,20,"124pro","1100398888","1112398913","124i");
 insert into producto values("mesa","mesa ancha",500000,10,"125pro","1100398888","4100398914","123i");
 
-insert into factura values(1350000,"2021-07-27","4100398912","1100398888","123p");
+insert into factura values(3000000,"2021-07-27","4100398912","1100398888","123p");
+insert into factura values(2000000,"2021-07-27","1100398919","4100398910","124p");
+insert into factura values(1350000,"2021-07-27","1112398911","4100398910","125p");
 
 insert into pago values("123d","Abono",350000,"2021-06-29","4100398912","1100398888","123p");
 
