@@ -52,6 +52,22 @@ public class Reportes {
         return cadenaConsulta;
     }
 
+    public String[] reportarAsesoresContratadosG(){
+        //mostrar los asesores con su sueldo
+        String cadenaConsulta = "";
+
+        try{
+            result = state.executeQuery("select nombre, sueldo from asesor");
+            while(result.next()){
+                cadenaConsulta += result.getString(1)+","+result.getFloat(3);
+                cadenaConsulta+="\n";
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return cadenaConsulta;
+    }
+
     public String repoProductos(){
         //Mostrar todos los productos registrados en stock
         String cadenaConsulta = "";
