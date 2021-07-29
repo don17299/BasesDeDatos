@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Aplicacion {
     private static Scanner SCANNER=new Scanner(System.in);
 
-    private String idUsuarioLogged;
+    private static String nombreUsuarioLogged;
     
     public static void main(String[] args) {
         String opcion="";
@@ -60,8 +60,8 @@ public class Aplicacion {
 
             if(conn.result.next()) {
                 System.out.println("Sesion Iniciada, Bienvenido");
-                System.out.println("Nombre: " + conn.result.getString(1));
-
+                nombreUsuarioLogged=conn.result.getString(1);
+                System.out.println("Nombre: " + nombreUsuarioLogged);
                 encontrado=0;
             }else{
                 System.out.println("No existe ese supervisor");
@@ -98,6 +98,8 @@ public class Aplicacion {
                 mensaje += reportes.repoComprasClientes();
                 mensaje += reportes.repoIntermedia1();
                 mensaje += reportes.repoCompleja2();
+                mensaje += reportes.repoCompleja3();
+                mensaje += "Generado por el supervisor: "+nombreUsuarioLogged;
                 System.out.println(mensaje);
                 GeneradorPDF.generadorPDF(mensaje,"pdfs/repoClientes.pdf");
                 break;
