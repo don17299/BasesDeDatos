@@ -116,7 +116,7 @@ insert into materia_prima values("Tela de nilon",1000,"Tela de nilon por kg","lo
 insert into materia_prima values("Colchones ortopedicos",500,"Colchones por unidades","los cameros","125m","125i");
 
 insert into pedido values("123p","2021-06-28","1100398919","1100398888","123e");
-insert into pedido values("124p","2021-08-28","1100398810","4100398910","124e");
+insert into pedido values("124p","2021-08-28","1100398810","1112398910","124e");
 insert into pedido values("125p","2021-09-28","4100398912","4100398910","125e");
 insert into pedido values("126p","2021-10-28","1100398919","1100398888","123e");
 

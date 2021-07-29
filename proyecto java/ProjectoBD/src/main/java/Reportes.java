@@ -22,7 +22,7 @@ public class Reportes {
 
         try{
             result = state.executeQuery("select nombre, correo from cliente");
-            cadenaConsulta +="Informacion de contacto de los clientes registrados\n\n";
+            cadenaConsulta +="Informacion de contacto de los clientes registrados:\n\n";
             while(result.next()){
                 cadenaConsulta += "Nombre: "+result.getString(1) +"\nCorreo de contacto: "+result.getString(2)
                         +"\n______________________________________\n\n";
@@ -39,7 +39,7 @@ public class Reportes {
 
         try{
             result = state.executeQuery("select  cedula, nombre, sueldo from asesor");
-            cadenaConsulta +="Informacion de asesores contratados\n\n";
+            cadenaConsulta +="Informacion de asesores contratados:\n\n";
             while(result.next()){
                 cadenaConsulta += "\nCedula: "+result.getString(1)
                         +"\n\tNombre: "+result.getString(2)
@@ -58,7 +58,7 @@ public class Reportes {
 
         try{
             result = state.executeQuery("select * from producto");
-            cadenaConsulta +="Informacion de productos para venta\n\n";
+            cadenaConsulta +="Informacion de productos para venta:\n\n";
             while(result.next()){
                 cadenaConsulta += "Nombre: "+result.getString(1)
                         +"\nCodigo: "+result.getString(5)
@@ -209,14 +209,15 @@ public class Reportes {
     }
 
     public String repoCompleja3(){
-        //contar la cantidad de asesores que hay por cada tipo
+        //Asesores con ventas mayores a 1500000 que sean de tipo estatico
         String cadenaConsulta = "";
 
         try{
-            result = state.executeQuery("select ");
-            cadenaConsulta +="Nomina de la empresa Gear:\n\n";
+            result = state.executeQuery("select a.cedula, a.nombre from tipo_asesor tp join asesor a  on tp.codigo=a.tipo_codigo join pedido p on a.cedula=p.asesor_cedula join factura f on p.codigo=f.pedido_codigo where f.total>1350000 and tp.nombre='Estatico' ");
+            cadenaConsulta +="Asesores Estaticos con ventas mayores a 1350000:\n\n";
             while(result.next()){
-                cadenaConsulta += "Nomina: "+result.getInt(1)
+                cadenaConsulta += "Cedula: "+result.getString(1)
+                        +"\nNombre: "+ result.getString(2)
                         +"\n_____________________________________________\n\n";
             }
         } catch (Exception e){
