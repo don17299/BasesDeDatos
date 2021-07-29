@@ -15,6 +15,7 @@ public class ReportesGraficos extends JFrame{
     private JButton reporte2Button;
     private JButton reporte1Button;
     private JPanel ReUnoPanel;
+    private JButton reporte3Button;
 
     public ReportesGraficos(String title){
         super(title);
@@ -55,11 +56,6 @@ public class ReportesGraficos extends JFrame{
 
             }
         });
-    }
-
-    public static void main(String[] args) {
-        JFrame frame= new ReportesGraficos("Mis reportes");
-        frame.setVisible(true);
     }
 
 }

@@ -1,5 +1,6 @@
 import exportar.GeneradorPDF;
 
+import javax.swing.*;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -27,7 +28,8 @@ public class Aplicacion {
                         + "3)Pedidos\n"
                         + "4)Productos\n"
                         + "5)Reportes\n"
-                        + "6)Salir");
+                        + "6)Graficas\n"
+                        + "7)Salir");
                 do {
                     System.out.println("Ingrese la operacion:");
                     opcion = SCANNER.nextLine();
@@ -36,9 +38,9 @@ public class Aplicacion {
                     }
                 } while (opcion.isEmpty() || !opcion.matches("^\\d*$"));
                 int op = Integer.parseInt(opcion);
-                if (0 < op && op < 7) {
+                if (0 < op && op < 8) {
                     menu(op);
-                    isIn = op != 6;
+                    isIn = op != 7;
                 } else {
                     System.out.println("opcion invalida, eliga nuevamente");
                 }
@@ -104,6 +106,10 @@ public class Aplicacion {
                 GeneradorPDF.generadorPDF(mensaje,"pdfs/repoClientes.pdf");
                 break;
             case 6:
+                JFrame frame= new ReportesGraficos("Mis reportes");
+                frame.setVisible(true);
+                break;
+            case 7:
                 System.out.println("Saliendo...");
                 break;
             default:
