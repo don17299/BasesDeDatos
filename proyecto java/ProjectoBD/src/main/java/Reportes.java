@@ -1,6 +1,8 @@
+import java.sql.Array;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class Reportes {
     Conexion conexion;
@@ -52,20 +54,21 @@ public class Reportes {
         return cadenaConsulta;
     }
 
-    public String[] reportarAsesoresContratadosG(){
+    public ArrayList<String[]> reportarAsesoresContratadosG(){
         //mostrar los asesores con su sueldo
-        String cadenaConsulta = "";
-
+        ArrayList<String[]> lista= new ArrayList<>();
         try{
             result = state.executeQuery("select nombre, sueldo from asesor");
             while(result.next()){
-                cadenaConsulta += result.getString(1)+","+result.getFloat(3);
-                cadenaConsulta+="\n";
+                String[] cadenaConsulta = new String[2];
+                cadenaConsulta[0]=result.getString(1);
+                cadenaConsulta[1]=""+result.getFloat(2);
+                lista.add(cadenaConsulta);
             }
         } catch (Exception e){
             e.printStackTrace();
         }
-        return cadenaConsulta;
+        return lista;
     }
 
     public String repoProductos(){

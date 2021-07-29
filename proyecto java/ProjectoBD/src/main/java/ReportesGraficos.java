@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class ReportesGraficos extends JFrame{
     private JPanel mainPanel;
@@ -24,20 +25,15 @@ public class ReportesGraficos extends JFrame{
         reporte1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String[][] datos= new String[100][2];
                 Reportes reportes= new Reportes();
-                String cadenaDatos=reportes.reportarAsesoresContratadosG();
-                String[] filas=cadenaDatos.split("\n");
-                for(int i=0;i<filas.length;i++){
-                    datos[i]=(filas[i]).split(",");
-                }
-                System.out.println(datos[0][0]);
-                System.out.println(datos[0][1]);
+                ArrayList<String[]> cadenaDatos=reportes.reportarAsesoresContratadosG();
                 DefaultCategoryDataset data= new DefaultCategoryDataset();
-                for(int j=0;j<datos.length;j++){
-                        data.setValue(Float.parseFloat(datos[j][1]),"sueldo",datos[j][0]);
-
+                for(int i=0;i<cadenaDatos.size();i++){
+                    String[] cosa = cadenaDatos.get(i);
+                    data.setValue(Float.parseFloat(cosa[1]),"sueldo" , cosa[0]);
                 }
+
+
                 JFreeChart grafico_barras= ChartFactory.createBarChart3D(
                   "Asesores de Gear",
                   "Asesores",
