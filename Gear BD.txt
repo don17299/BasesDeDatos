@@ -1,23 +1,23 @@
 create database gear;
 use gear;
-create table supervisor(nombre varchar(255) not null, correo varchar(255) not null unique, cedula varchar(10) not null, primary key (cedula) );
-create table diseñador(nombre varchar(255) not null, correo varchar(255) not null unique, cedula varchar(10) not null, primary key (cedula) );
-create table operario(nombre varchar(255) not null, correo varchar(255) not null unique, cedula varchar(10) not null, primary key (cedula) );
+create table supervisor(nombre varchar(255) not null, correo varchar(255) not null unique, cedula varchar(10) not null,sueldo float not null, primary key (cedula) );
+create table diseñador(nombre varchar(255) not null, correo varchar(255) not null unique, cedula varchar(10) not null,sueldo float not null, primary key (cedula) );
+create table operario(nombre varchar(255) not null, correo varchar(255) not null unique, cedula varchar(10) not null,sueldo float not null, primary key (cedula) );
 create table telefono_supervisor(numero varchar(10) not null, supervisor_cedula varchar(10) not null, primary key (numero,supervisor_cedula), foreign key(supervisor_cedula) references supervisor(cedula));
 create table telefono_diseñador(numero varchar(10) not null, diseñador_cedula varchar(10) not null, primary key (numero,diseñador_cedula), foreign key(diseñador_cedula) references diseñador(cedula));
 create table telefono_operario(numero varchar(10) not null, operario_cedula varchar(10) not null, primary key (numero,operario_cedula), foreign key(operario_cedula) references operario(cedula));
 create table tipo_asesor(nombre varchar(250) not null, descripcion varchar(250) not null, codigo varchar(250) not null, primary key(codigo));
-create table asesor(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null, tipo_codigo varchar(250) not null, primary key (cedula),foreign key(tipo_codigo) references tipo_asesor(codigo));
+create table asesor(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null, tipo_codigo varchar(250) not null,sueldo float not null, primary key (cedula),foreign key(tipo_codigo) references tipo_asesor(codigo));
 create table cliente(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null, primary key (cedula));
 create table telefono_asesor(numero varchar(10) not null, asesor_cedula varchar(10) not null, primary key (numero,asesor_cedula), foreign key(asesor_cedula) references asesor(cedula));
 create table telefono_cliente(numero varchar(10) not null, cliente_cedula varchar(10) not null, primary key (numero,cliente_cedula), foreign key(cliente_cedula) references cliente(cedula));
-create table secretaria(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null, primary key (cedula));
+create table secretaria(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null,sueldo float not null, primary key (cedula));
 create table telefono_secretaria(numero varchar(10) not null, secretaria_cedula varchar(10) not null, primary key (numero,secretaria_cedula), foreign key(secretaria_cedula) references secretaria(cedula));
 create table proveedor(nombre varchar(250) not null, descripcion varchar(250) not null, codigo varchar(250) not null, primary key (codigo));
 create table telefono_proveedor(numero varchar(10) not null, proveedor_codigo varchar(10) not null, primary key (numero,proveedor_codigo), foreign key(proveedor_codigo) references proveedor(codigo));
-create table trabajador_inv(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null, primary key (cedula));
+create table trabajador_inv(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null,sueldo float not null, primary key (cedula));
 create table telefono_trabajador_inv(numero varchar(10) not null, trabajador_inv_cedula varchar(10) not null, primary key (numero,trabajador_inv_cedula), foreign key(trabajador_inv_cedula) references trabajador_inv(cedula));
-create table trabajador_env(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null, primary key (cedula));
+create table trabajador_env(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null,sueldo float not null, primary key (cedula));
 create table telefono_trabajador_env(numero varchar(10) not null, trabajador_env_cedula varchar(10) not null, primary key (numero,trabajador_env_cedula), foreign key(trabajador_env_cedula) references trabajador_env(cedula));
 create table inventario(codigo varchar(250) not null, fecha_inv date, primary key (codigo));
 create table envio(codigo varchar(250) not null, fecha_env date, lugar_entrega varchar(250), primary key (codigo));
@@ -36,25 +36,25 @@ create table materia_prima_proveedor(materia_prima_codigo varchar(250) not null,
 
 //datos
 
-insert into supervisor values("Alan","sup1@mail.com","1100398910");
+insert into supervisor values("Alan","sup1@mail.com","1100398910",900000);
 insert into telefono_supervisor values("3107890789","1100398910");
-insert into supervisor values("Fred","sup2@mail.com","1100398888");
-insert into supervisor values("Ivan","sup3@mail.com","1112398910");
-insert into supervisor values("Melissa","sup4@mail.com","4100398910");
+insert into supervisor values("Fred","sup2@mail.com","1100398888",900000);
+insert into supervisor values("Ivan","sup3@mail.com","1112398910",900000);
+insert into supervisor values("Melissa","sup4@mail.com","4100398910",900000);
 insert into telefono_supervisor values("3117734589","4100398910");
 
-insert into diseñador values("Diego","dis1@mail.com","1100398911");
+insert into diseñador values("Diego","dis1@mail.com","1100398911",800000);
 insert into telefono_diseñador values("3107890781","1100398911");
-insert into diseñador values("Jhan","dis2@mail.com","1100398882");
-insert into diseñador values("Olga","dis3@mail.com","1112398913");
-insert into diseñador values("Omar","dis4@mail.com","4100398914");
+insert into diseñador values("Jhan","dis2@mail.com","1100398882",800000);
+insert into diseñador values("Olga","dis3@mail.com","1112398913",800000);
+insert into diseñador values("Omar","dis4@mail.com","4100398914",800000);
 insert into telefono_diseñador values("3107890782","4100398914");
 
-insert into operario values("Frank","op1@mail.com","1100398915");
+insert into operario values("Frank","op1@mail.com","1100398915",800000);
 insert into telefono_operario values("3107890783","1100398915");
-insert into operario values("Maria","op2@mail.com","1100398886");
-insert into operario values("Jorge","op3@mail.com","1112398917");
-insert into operario values("Alice","op4@mail.com","4100398918");
+insert into operario values("Maria","op2@mail.com","1100398886",800000);
+insert into operario values("Jorge","op3@mail.com","1112398917",800000);
+insert into operario values("Alice","op4@mail.com","4100398918",800000);
 insert into telefono_operario values("3107890784","4100398918");
 
 insert into cliente values("Carlos Mario","charlie@mail.com","1100398919");
@@ -67,32 +67,32 @@ insert into telefono_cliente values("3107890786","4100398912");
 insert into tipo_asesor values("Movil","Se mueve en varios locales de la ciudad","123");
 insert into tipo_asesor values("Estatico","Atiende puestos fijo de gear","124");
 
-insert into asesor values("Roger","as1@mail.com","1100398910","123");
+insert into asesor values("Roger","as1@mail.com","1100398910","123",900000);
 insert into telefono_asesor values("3107890787","1100398910");
-insert into asesor values("Ichigo","as2@mail.com","1100398888","124");
-insert into asesor values("Jotaro","as3@mail.com","1112398910","124");
-insert into asesor values("Hisoka","as4@mail.com","4100398910","123");
+insert into asesor values("Ichigo","as2@mail.com","1100398888","124",900000);
+insert into asesor values("Jotaro","as3@mail.com","1112398910","124",900000);
+insert into asesor values("Hisoka","as4@mail.com","4100398910","123",900000);
 insert into telefono_asesor values("3107890788","4100398910");
 
-insert into secretaria values("Sarah","sec1@mail.com","1100398910");
+insert into secretaria values("Sarah","sec1@mail.com","1100398910",900000);
 insert into telefono_secretaria values("3107890787","1100398910");
-insert into secretaria values("Alice","sec2@mail.com","1100398888");
-insert into secretaria values("Jill","sec3@mail.com","1112398910");
-insert into secretaria values("Bisquit","sec4@mail.com","4100398910");
+insert into secretaria values("Alice","sec2@mail.com","1100398888",900000);
+insert into secretaria values("Jill","sec3@mail.com","1112398910",900000);
+insert into secretaria values("Bisquit","sec4@mail.com","4100398910",900000);
 insert into telefono_secretaria values("3107890788","4100398910");
 
-insert into trabajador_env values("Mario","tenv1@mail.com","1100398910");
+insert into trabajador_env values("Mario","tenv1@mail.com","1100398910",500000);
 insert into telefono_trabajador_env values("3107890787","1100398910");
-insert into trabajador_env values("Luis","tenv2@mail.com","1100398888");
-insert into trabajador_env values("Guille","tenv3@mail.com","1112398910");
-insert into trabajador_env values("Alex","tenv4@mail.com","4100398910");
+insert into trabajador_env values("Luis","tenv2@mail.com","1100398888",500000);
+insert into trabajador_env values("Guille","tenv3@mail.com","1112398910",500000);
+insert into trabajador_env values("Alex","tenv4@mail.com","4100398910",500000);
 insert into telefono_trabajador_env values("3107890788","4100398910");
 
-insert into trabajador_inv values("Maria","tinv1@mail.com","1100398910");
+insert into trabajador_inv values("Maria","tinv1@mail.com","1100398910",500000);
 insert into telefono_trabajador_inv values("3107890787","1100398910");
-insert into trabajador_inv values("Luisa","tinv2@mail.com","1100398888");
-insert into trabajador_inv values("maron","tinv3@mail.com","1112398910");
-insert into trabajador_inv values("yamcha","tinv4@mail.com","4100398910");
+insert into trabajador_inv values("Luisa","tinv2@mail.com","1100398888",500000);
+insert into trabajador_inv values("maron","tinv3@mail.com","1112398910",500000);
+insert into trabajador_inv values("yamcha","tinv4@mail.com","4100398910",500000);
 insert into telefono_trabajador_inv values("3107890788","4100398910");
 
 insert into proveedor values("Maderas la buena","Maderas finas","123pr");
@@ -118,8 +118,8 @@ insert into articulo values("Almohada de One piece",1,"Almohada personalizada de
 insert into articulo values("sabanas De oro",3,"Sabanas recubiertas de oro",900000,"art2","123p");
 
 insert into producto values("cama","Cama estandar",400000,90,"123pro","1100398910","4100398914","124i");
-insert into producto values("silla","silla pequeña",40000,20,"124pro","1100398910","4100398914","124i");
-insert into producto values("mesa","mesa ancha",500000,10,"125pro","1100398910","4100398914","123i");
+insert into producto values("silla","silla pequeña",40000,20,"124pro","1100398888","1112398913","124i");
+insert into producto values("mesa","mesa ancha",500000,10,"125pro","1100398888","4100398914","123i");
 
 insert into factura values(1350000,"2021-07-27","4100398912","1100398888","123p");
 

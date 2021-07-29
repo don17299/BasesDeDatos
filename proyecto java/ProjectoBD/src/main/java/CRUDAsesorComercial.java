@@ -57,6 +57,7 @@ public class CRUDAsesorComercial {
         String correo="";
         String cedula="";
         String tipo="";
+        float sueldo=0;
         switch (opcion){
             case 1:
 
@@ -69,7 +70,9 @@ public class CRUDAsesorComercial {
                     correo = SCANNER.nextLine();
                     System.out.println("Ingrese el codigo del tipo del asesor comercial:");
                     tipo = SCANNER.nextLine();
-                    crearAsesorComercial(nombre,correo,cedula,tipo);
+                    System.out.println("Ingrese el sueldo del asesor comercial:");
+                    sueldo = Float.parseFloat(SCANNER.nextLine());
+                    crearAsesorComercial(nombre,correo,cedula,tipo,sueldo);
                 } else {
                     System.out.println("El  asesor comercial ya existe");
                 }
@@ -84,7 +87,9 @@ public class CRUDAsesorComercial {
                     correo = SCANNER.nextLine();
                     System.out.println("Ingrese el codigo del tipo del asesor comercial:");
                     tipo = SCANNER.nextLine();
-                    modificarAsesorComercial(nombre,correo,cedula,tipo);
+                    System.out.println("Ingrese el sueldo del asesor comercial:");
+                    sueldo = Float.parseFloat(SCANNER.nextLine());
+                    modificarAsesorComercial(nombre,correo,cedula,tipo,sueldo);
                 } else {
                     System.out.println("Asesor comercial inexistente");
                 }
@@ -119,14 +124,15 @@ public class CRUDAsesorComercial {
 
     }
 
-    public void crearAsesorComercial(String nombre, String correo, String cedula,String tipo){
+    public void crearAsesorComercial(String nombre, String correo, String cedula,String tipo, float sueldo){
         try {
-            pState = conn.conexion.prepareStatement("insert into asesor values(?,?,?,?)");
+            pState = conn.conexion.prepareStatement("insert into asesor values(?,?,?,?,?)");
 
             pState.setString(1,nombre);
             pState.setString(2,correo);
             pState.setString(3,cedula);
             pState.setString(4,tipo);
+            pState.setFloat(5,sueldo);
             pState.executeUpdate();
             System.out.println("Asesor comercial creado");
         }catch (Exception e){
@@ -146,7 +152,8 @@ public class CRUDAsesorComercial {
                 System.out.println("Nombre: " + result.getString(1)
                         + "\t||Correo: " + result.getString(2)
                         + "\t||Cedula: " + result.getString(3)
-                        + "\t||Tipo: " + result.getString(4));
+                        + "\t||Tipo: " + result.getString(4)
+                        + "\t||Sueldo: "+ result.getFloat(5));
 
                 encontrado=0;
             }else{
@@ -158,13 +165,14 @@ public class CRUDAsesorComercial {
         return encontrado;
     }
 
-    public void modificarAsesorComercial(String nombre, String correo,String cedula, String tipo){
+    public void modificarAsesorComercial(String nombre, String correo,String cedula, String tipo,float sueldo){
         try {
-            pState = conn.conexion.prepareStatement("update asesor set nombre=?, correo=?, tipo_codigo=? where cedula=?");
+            pState = conn.conexion.prepareStatement("update asesor set nombre=?, correo=?, tipo_codigo=?, sueldo=? where cedula=?");
             pState.setString(1,nombre);
             pState.setString(2,correo);
             pState.setString(3,cedula);
             pState.setString(4,tipo);
+            pState.setFloat(5,sueldo);
             int a = pState.executeUpdate();
             if(a!=0) {
                 System.out.println("Asesor Actualizado");
@@ -196,14 +204,15 @@ public class CRUDAsesorComercial {
                 System.out.println("Nombre: "+result.getString(1)
                         +"\t||Correo: "+result.getString(2)
                         +"\t||Cedula: "+result.getString(3)
-                        +"\t||Tipo: " + result.getString(4));
+                        +"\t||Tipo: " + result.getString(4)
+                        +"\t||Sueldo: "+ result.getFloat(5));
             }
         }catch (Exception e){
             e.printStackTrace();
         }
     }
 
-    public void salir(){///jajajajaj ya vuelvo
+    public void salir(){
         try {
             if (conn.conexion != null) {
                 conn.conexion.close();

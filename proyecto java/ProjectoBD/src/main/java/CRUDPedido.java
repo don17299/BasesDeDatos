@@ -21,7 +21,6 @@ public class CRUDPedido {
         this.state= conn.state;
         this.result= conn.result;
         menuPedido();
-
     }
 
     public void menuPedido(){
@@ -45,7 +44,7 @@ public class CRUDPedido {
             } while (opcion.isEmpty() || !opcion.matches("^\\d*$"));
             int op = Integer.parseInt(opcion);
             if(0< op && op <7){
-                switchAsesorComercial(op);
+                switchPedido(op);
                 isIn = op != 6;
             } else {
                 System.out.println("opcion invalida, eliga nuevamente");
@@ -53,7 +52,7 @@ public class CRUDPedido {
         }while(isIn);
     }
 
-    public void switchAsesorComercial(int opcion){
+    public void switchPedido(int opcion){
         String fechaD="";
         String fechaE="";
         String codigo="";

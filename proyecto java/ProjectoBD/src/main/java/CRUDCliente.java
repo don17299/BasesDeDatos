@@ -185,7 +185,6 @@ public class CRUDCliente {
             System.out.println("Clientes: ");
             while(result.next()){
                 System.out.println("Nombre: "+result.getString(1)+"\t||Correo: "+result.getString(2)+"\t||Cedula: "+result.getString(3));
-
             }
         }catch (Exception e){
             e.printStackTrace();
