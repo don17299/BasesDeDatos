@@ -96,6 +96,28 @@ public class Reportes {
 
     }
 
+    public ArrayList<String[]> repoProductosG(){
+        //Mostrar el precio y nombre del producto
+        ArrayList<String[]> lista= new ArrayList<String[]>();
+        try{
+            result = state.executeQuery("select nombre, precio from producto");
+            while(result.next()){
+                String[] cadenaConsulta = new String[2];
+                cadenaConsulta[0] = result.getString(1) ;
+                cadenaConsulta[1] = ""+result.getFloat(2);
+                lista.add(cadenaConsulta);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return lista;
+
+    }
+
+
+
+
+
     //Intermedia-------------Intermedia---------------Intermedia---------------Intermedia-----------Intermedia----------
 
 
@@ -165,6 +187,28 @@ public class Reportes {
         return cadenaConsulta;
     }
 
+
+    public ArrayList<String[]> repoCantidadTipoAsesorG(){
+        //contar la cantidad de asesores que hay por cada tipo
+
+        ArrayList<String[]> lista= new ArrayList<>();
+        try{
+            result = state.executeQuery("select t.nombre, count(cedula) " +
+                    "from asesor ase right join tipo_asesor t on ase.tipo_codigo = t.codigo " +
+                    "group by t.nombre");
+            while(result.next()){
+                String[] cadenaConsulta = new String[2];
+                 cadenaConsulta[0] = result.getString(1);
+                 cadenaConsulta[1] = ""+result.getInt(2);
+                 lista.add(cadenaConsulta);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return lista;
+    }
+
+
     public String repoNominaTrabajadores(){
         //Nomina de todos los trabajadores
         String cadenaConsulta = "";
@@ -184,7 +228,24 @@ public class Reportes {
 
     }
 
-    //Complejas------------Complejas------------Complejas------------Complejas------------Complejas------------Complejas
+    public String repoIntermedia3(){
+        //Asesores con ventas mayores a 1500000 que sean de tipo estatico
+        String cadenaConsulta = "";
+
+        try{
+            result = state.executeQuery("select a.cedula, a.nombre from tipo_asesor tp join asesor a  on tp.codigo=a.tipo_codigo join pedido p on a.cedula=p.asesor_cedula join factura f on p.codigo=f.pedido_codigo where f.total>1350000 and tp.nombre='Estatico' ");
+            cadenaConsulta +="Asesores Estaticos con ventas mayores a 1350000:\n\n";
+            while(result.next()){
+                cadenaConsulta += "Cedula: "+result.getString(1)
+                        +"\nNombre: "+ result.getString(2)
+                        +"\n_____________________________________________\n\n";
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return cadenaConsulta;
+    }
+
 
     public String repoProdSupervisorDiseniador(){
         //Consulta 3: Seleccionar por nombre  todos los productos
@@ -208,6 +269,31 @@ public class Reportes {
 
     }
 
+    //Complejas------------Complejas------------Complejas------------Complejas------------Complejas------------Complejas
+
+    public String repoCompleja1(){
+        //listar los asesores que ganen mas de (el promedio de la nomina)
+        String cadenaConsulta = "";
+
+        try{
+            result = state.executeQuery("select nombre, cedula, sueldo from asesor where sueldo > (" +
+                    "select AVG(h.sueldo) from (select a.sueldo from asesor a union all select s.sueldo from supervisor s " +
+                    "union all select d.sueldo from diseñador d union all select se.sueldo from secretaria se union all " +
+                    "select o.sueldo from operario o union all select te.sueldo from trabajador_env te union all " +
+                    "select ti.sueldo from trabajador_inv ti) h)");
+            cadenaConsulta +="\nAsesores que ganan mas que el promedio de la nomina:\n";
+            while(result.next()){
+                cadenaConsulta += "Nombre: "+result.getString(1);
+                cadenaConsulta += ", Cedula: "+result.getString(2);
+                cadenaConsulta += ", Sueldo: "+result.getFloat(3)+"\n";
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return cadenaConsulta;
+    }
+
+
     public String repoCompleja2(){
         //listar los clientes que hayan comprado algo más caro que un cliente especifico
         String cadenaConsulta = "";
@@ -227,22 +313,26 @@ public class Reportes {
         return cadenaConsulta;
     }
 
-    public String repoCompleja3(){
-        //Asesores con ventas mayores a 1500000 que sean de tipo estatico
+
+    public String repoCompleja3() {
+        //listar los asesores que ganen menos de (el promedio de la nomina)
         String cadenaConsulta = "";
 
         try{
-            result = state.executeQuery("select a.cedula, a.nombre from tipo_asesor tp join asesor a  on tp.codigo=a.tipo_codigo join pedido p on a.cedula=p.asesor_cedula join factura f on p.codigo=f.pedido_codigo where f.total>1350000 and tp.nombre='Estatico' ");
-            cadenaConsulta +="Asesores Estaticos con ventas mayores a 1350000:\n\n";
+            result = state.executeQuery("select nombre, cedula, sueldo from asesor where sueldo < (" +
+                    "select AVG(h.sueldo) from (select a.sueldo from asesor a union all select s.sueldo from supervisor s " +
+                    "union all select d.sueldo from diseñador d union all select se.sueldo from secretaria se union all " +
+                    "select o.sueldo from operario o union all select te.sueldo from trabajador_env te union all " +
+                    "select ti.sueldo from trabajador_inv ti) h)");
+            cadenaConsulta +="\nAsesores que ganan menos que el promedio de la nomina:\n";
             while(result.next()){
-                cadenaConsulta += "Cedula: "+result.getString(1)
-                        +"\nNombre: "+ result.getString(2)
-                        +"\n_____________________________________________\n\n";
+                cadenaConsulta += "Nombre: "+result.getString(1);
+                cadenaConsulta += ", Cedula: "+result.getString(2);
+                cadenaConsulta += ", Sueldo: "+result.getFloat(3)+"\n";
             }
         } catch (Exception e){
             e.printStackTrace();
         }
         return cadenaConsulta;
     }
-
 }

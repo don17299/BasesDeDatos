@@ -28,7 +28,7 @@ public class  GeneradorPDF {
                 contentStream.beginText();
                 contentStream.setFont(PDType1Font.TIMES_BOLD, 14);
                 contentStream.newLineAtOffset(20, page.getMediaBox().getHeight() - 52);
-                limite = (i==numPages-1)?cantidadLineas:limite*(1+i);
+                limite = (i==numPages-1)?cantidadLineas:46*(1+i);
                 for (int j=aux; j < limite; j++) {
                     contentStream.showText(mensajeArr[j]);
                     contentStream.newLineAtOffset(0, -15);

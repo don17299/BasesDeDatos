@@ -2,7 +2,6 @@ import exportar.GeneradorPDF;
 
 import javax.swing.*;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Aplicacion {
@@ -91,19 +90,25 @@ public class Aplicacion {
                 break;
             case 5:
                 Reportes reportes = new Reportes();
-                String mensaje = reportes.repoClientesResgistrados();
+                String mensaje ="--------------------------------------------- simples------------------------\n";
+                mensaje += reportes.repoClientesResgistrados();
                 mensaje += reportes.reportarAsesoresContratados();
                 mensaje += reportes.repoProductos();
+                mensaje += "------------------------------------------------- Intermedias --------------------\n";
                 mensaje += reportes.repoProdSupervisorDiseniador();
                 mensaje += reportes.repoCantidadTipoAsesor();
                 mensaje += reportes.repoNominaTrabajadores();
                 mensaje += reportes.repoComprasClientes();
                 mensaje += reportes.repoIntermedia1();
+                mensaje += reportes.repoIntermedia3();
+                mensaje += "-------------------------------------------------- complejas ----------------------\n";
+                mensaje += reportes.repoCompleja1();
                 mensaje += reportes.repoCompleja2();
                 mensaje += reportes.repoCompleja3();
-                mensaje += "Generado por el supervisor: "+nombreUsuarioLogged;
+
+                mensaje += "\n\n\t\t\tGenerado por el supervisor: "+nombreUsuarioLogged;
                 System.out.println(mensaje);
-                GeneradorPDF.generadorPDF(mensaje,"pdfs/repoClientes.pdf");
+                GeneradorPDF.generadorPDF(mensaje,"pdfs/reportes.pdf");
                 break;
             case 6:
                 JFrame frame= new ReportesGraficos("Mis reportes");
