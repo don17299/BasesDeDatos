@@ -1,64 +1,156 @@
-create table supervisor(nombre varchar(255) not null, correo varchar(255) not null unique, cedula varchar(10) not null, primary key (cedula) );
-
-create table diseñador(nombre varchar(255) not null, correo varchar(255) not null unique, cedula varchar(10) not null, primary key (cedula) );
-
-create table operario(nombre varchar(255) not null, correo varchar(255) not null unique, cedula varchar(10) not null, primary key (cedula) );
-
+create database gear;
+use gear;
+create table supervisor(nombre varchar(255) not null, correo varchar(255) not null unique, cedula varchar(10) not null,sueldo float not null, primary key (cedula) );
+create table diseñador(nombre varchar(255) not null, correo varchar(255) not null unique, cedula varchar(10) not null,sueldo float not null, primary key (cedula) );
+create table operario(nombre varchar(255) not null, correo varchar(255) not null unique, cedula varchar(10) not null,sueldo float not null, primary key (cedula) );
 create table telefono_supervisor(numero varchar(10) not null, supervisor_cedula varchar(10) not null, primary key (numero,supervisor_cedula), foreign key(supervisor_cedula) references supervisor(cedula));
-
 create table telefono_diseñador(numero varchar(10) not null, diseñador_cedula varchar(10) not null, primary key (numero,diseñador_cedula), foreign key(diseñador_cedula) references diseñador(cedula));
-
 create table telefono_operario(numero varchar(10) not null, operario_cedula varchar(10) not null, primary key (numero,operario_cedula), foreign key(operario_cedula) references operario(cedula));
-
-create table asesor(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null, tipo_codigo varchar(250) not null, primary key (cedula),foreign key(tipo_codigo) references tipo_asesor(codigo));
-
-create table cliente(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null, tipo_codigo varchar(250) not null, primary key (cedula));
-
+create table tipo_asesor(nombre varchar(250) not null, descripcion varchar(250) not null, codigo varchar(250) not null, primary key(codigo));
+create table asesor(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null, tipo_codigo varchar(250) not null,sueldo float not null, primary key (cedula),foreign key(tipo_codigo) references tipo_asesor(codigo));
+create table cliente(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null, primary key (cedula));
 create table telefono_asesor(numero varchar(10) not null, asesor_cedula varchar(10) not null, primary key (numero,asesor_cedula), foreign key(asesor_cedula) references asesor(cedula));
-
 create table telefono_cliente(numero varchar(10) not null, cliente_cedula varchar(10) not null, primary key (numero,cliente_cedula), foreign key(cliente_cedula) references cliente(cedula));
-
-create table secretaria(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null, tipo_codigo varchar(250) not null, primary key (cedula));
-
+create table secretaria(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null,sueldo float not null, primary key (cedula));
 create table telefono_secretaria(numero varchar(10) not null, secretaria_cedula varchar(10) not null, primary key (numero,secretaria_cedula), foreign key(secretaria_cedula) references secretaria(cedula));
-
 create table proveedor(nombre varchar(250) not null, descripcion varchar(250) not null, codigo varchar(250) not null, primary key (codigo));
-
 create table telefono_proveedor(numero varchar(10) not null, proveedor_codigo varchar(10) not null, primary key (numero,proveedor_codigo), foreign key(proveedor_codigo) references proveedor(codigo));
-
-create table trabajador_inv(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null, primary key (cedula));
-
+create table trabajador_inv(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null,sueldo float not null, primary key (cedula));
 create table telefono_trabajador_inv(numero varchar(10) not null, trabajador_inv_cedula varchar(10) not null, primary key (numero,trabajador_inv_cedula), foreign key(trabajador_inv_cedula) references trabajador_inv(cedula));
-
-create table trabajador_env(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null, primary key (cedula));
-
+create table trabajador_env(nombre varchar(250) not null, correo varchar(250) not null unique, cedula varchar(10) not null,sueldo float not null, primary key (cedula));
 create table telefono_trabajador_env(numero varchar(10) not null, trabajador_env_cedula varchar(10) not null, primary key (numero,trabajador_env_cedula), foreign key(trabajador_env_cedula) references trabajador_env(cedula));
-
 create table inventario(codigo varchar(250) not null, fecha_inv date, primary key (codigo));
-
 create table envio(codigo varchar(250) not null, fecha_env date, lugar_entrega varchar(250), primary key (codigo));
-
 create table materia_prima(nombre varchar(250) not null, cantidad integer not null, descripcion varchar(250), marca varchar(250) not null, codigo varchar(250), inventario_codigo varchar(250), primary key(codigo), foreign key(inventario_codigo) references inventario(codigo));
-
-create table pedido(codigo varchar(250) not null, fecha_diligenciado date, fecha_entrega date, cliente_cedula varchar(10) not null, asesor_cedula varchar(10) not null, envio_codigo varchar(250) not null, primary key(codigo), foreign key(cliente_cedula) references cliente(cedula), foreign key(asesor_cedula) references asesor(cedula), foreign key(envio_codigo) references envio(codigo));
-
+create table pedido(codigo varchar(250) not null, fecha_diligenciado date, cliente_cedula varchar(10) not null, asesor_cedula varchar(10) not null, envio_codigo varchar(250) not null, primary key(codigo), foreign key(cliente_cedula) references cliente(cedula), foreign key(asesor_cedula) references asesor(cedula), foreign key(envio_codigo) references envio(codigo));
 create table articulo(nombre varchar(250), cantidad integer not null, descripcion varchar(250), precio float not null, codigo varchar(250) not null, pedido_codigo varchar(250) not null, primary key(codigo), foreign key(pedido_codigo) references pedido(codigo));
-
 create table producto(nombre varchar(250) not null, descripcion varchar(250) not null, precio float not null, cantidad integer not null, codigo varchar(250) not null, supervisor_cedula varchar(10) not null, diseñador_cedula varchar(10) not null, inventario_codigo varchar(250) not null, primary key(codigo), foreign key(supervisor_cedula) references supervisor(cedula), foreign key(diseñador_cedula) references diseñador(cedula), foreign key(inventario_codigo) references inventario(codigo));
-
 create table factura(total float not null, fecha_diligenciamiento date, cliente_cedula varchar(10) not null, secretaria_cedula varchar(10) not null, pedido_codigo varchar(250) not null, primary key(pedido_codigo), foreign key(pedido_codigo) references pedido(codigo), foreign key(secretaria_cedula) references secretaria(cedula), foreign key(cliente_cedula) references cliente(cedula));
-
 create table pago(codigo varchar(250) not null, concepto varchar(250) not null, total float not null, fecha_diligenciamiento date not null, cliente_cedula varchar(10) not null, asesor_cedula varchar(10) not null, pedido_codigo varchar(250) not null, primary key(codigo), foreign key(cliente_cedula) references cliente(cedula), foreign key(asesor_cedula) references asesor(cedula), foreign key(pedido_codigo) references pedido(codigo));
-
 create table producto_pedido(producto_codigo varchar(250) not null, pedido_codigo varchar(250) not null, observaciones varchar(250), cantidad integer not null, primary key(producto_codigo, pedido_codigo), foreign key(producto_codigo) references producto(codigo), foreign key(pedido_codigo) references pedido(codigo));
-
 create table producto_operario(operario_cedula varchar(10) not null, producto_codigo varchar(250) not null, primary key(operario_cedula, producto_codigo), foreign key(operario_cedula) references operario(cedula), foreign key(producto_codigo) references producto(codigo));
-
 create table producto_materia_prima(producto_codigo varchar(250) not null, materia_prima_codigo varchar(250) not null, primary key(producto_codigo, materia_prima_codigo), foreign key(producto_codigo) references producto(codigo), foreign key(materia_prima_codigo) references materia_prima(codigo));
-
 create table inventario_trabajador_inv(inventario_codigo varchar(250) not null, trabajador_inv_cedula varchar(10), primary key(inventario_codigo, trabajador_inv_cedula), foreign key(inventario_codigo) references inventario(codigo), foreign key(trabajador_inv_cedula) references trabajador_inv(cedula));
-
 create table envio_trabajador_env(envio_codigo varchar(250) not null, trabajador_env_cedula varchar(10), primary key(envio_codigo, trabajador_env_cedula), foreign key(envio_codigo) references envio(codigo), foreign key(trabajador_env_cedula) references trabajador_env(cedula));
-
 create table materia_prima_proveedor(materia_prima_codigo varchar(250) not null, proveedor_codigo varchar(250) not null, primary key(materia_prima_codigo, proveedor_codigo), foreign key(materia_prima_codigo) references materia_prima(codigo), foreign key(proveedor_codigo) references proveedor(codigo));
 
+
+insert into supervisor values("Alan","sup1@mail.com","1100398910",900000);
+insert into telefono_supervisor values("3107890789","1100398910");
+insert into supervisor values("Fred","sup2@mail.com","1100398888",800000);
+insert into supervisor values("Ivan","sup3@mail.com","1112398910",700000);
+insert into supervisor values("Melissa","sup4@mail.com","4100398910",500000);
+insert into telefono_supervisor values("3117734589","4100398910");
+insert into supervisor values("Carlos","abc@mail.com","1234567890",1000000);
+
+insert into diseñador values("Diego","dis1@mail.com","1100398911",900000);
+insert into telefono_diseñador values("3107890781","1100398911");
+insert into diseñador values("Jhan","dis2@mail.com","1100398882",800000);
+insert into diseñador values("Olga","dis3@mail.com","1112398913",600000);
+insert into diseñador values("Omar","dis4@mail.com","4100398914",500000);
+insert into telefono_diseñador values("3107890782","4100398914");
+
+insert into operario values("Frank","op1@mail.com","1100398915",900000);
+insert into telefono_operario values("3107890783","1100398915");
+insert into operario values("Maria","op2@mail.com","1100398886",800000);
+insert into operario values("Jorge","op3@mail.com","1112398917",700000);
+insert into operario values("Alice","op4@mail.com","4100398918",700000);
+insert into telefono_operario values("3107890784","4100398918");
+
+insert into cliente values("Carlos Mario","charlie@mail.com","1100398919");
+insert into telefono_cliente values("3107890785","1100398919");
+insert into cliente values("Juan David","juan@mail.com","1100398810");
+insert into cliente values("Jorge Ivan","jorge@mail.com","1112398911");
+insert into cliente values("Claudia Patricia","baby@mail.com","4100398912");
+insert into telefono_cliente values("3107890786","4100398912");
+
+insert into tipo_asesor values("Movil","Se mueve en varios locales de la ciudad","123");
+insert into tipo_asesor values("Estatico","Atiende puestos fijo de gear","124");
+
+insert into asesor values("Roger","as1@mail.com","1100398910","123",1000000);
+insert into telefono_asesor values("3107890787","1100398910");
+insert into asesor values("Ichigo","as2@mail.com","1100398888","124",900000);
+insert into asesor values("Jotaro","as3@mail.com","1112398910","124",800000);
+insert into asesor values("Hisoka","as4@mail.com","4100398910","123",700000);
+insert into telefono_asesor values("3107890788","4100398910");
+
+insert into secretaria values("Sarah","sec1@mail.com","1100398910",900000);
+insert into telefono_secretaria values("3107890787","1100398910");
+insert into secretaria values("Alice","sec2@mail.com","1100398888",900000);
+insert into secretaria values("Jill","sec3@mail.com","1112398910",900000);
+insert into secretaria values("Bisquit","sec4@mail.com","4100398910",900000);
+insert into telefono_secretaria values("3107890788","4100398910");
+
+insert into trabajador_env values("Mario","tenv1@mail.com","1100398910",500000);
+insert into telefono_trabajador_env values("3107890787","1100398910");
+insert into trabajador_env values("Luis","tenv2@mail.com","1100398888",500000);
+insert into trabajador_env values("Guille","tenv3@mail.com","1112398910",500000);
+insert into trabajador_env values("Alex","tenv4@mail.com","4100398910",500000);
+insert into telefono_trabajador_env values("3107890788","4100398910");
+
+insert into trabajador_inv values("Maria","tinv1@mail.com","1100398910",500000);
+insert into telefono_trabajador_inv values("3107890787","1100398910");
+insert into trabajador_inv values("Luisa","tinv2@mail.com","1100398888",500000);
+insert into trabajador_inv values("maron","tinv3@mail.com","1112398910",500000);
+insert into trabajador_inv values("yamcha","tinv4@mail.com","4100398910",500000);
+insert into telefono_trabajador_inv values("3107890788","4100398910");
+
+insert into proveedor values("Maderas la buena","Maderas finas","123pr");
+insert into telefono_proveedor values("3107890787","123pr");
+insert into proveedor values("Muebles la choza","lo mejor para la vivienda","124pr");
+insert into proveedor values("Colchones el Kevin","me compra o lo pongo a dormir","125pr");
+insert into proveedor values("Miltelas","Muchas telas","126pr");
+insert into telefono_proveedor values("3107890788","126pr");
+
+insert into inventario values("123i","2020-09-10");
+insert into inventario values("124i","2021-01-15");
+insert into inventario values("125i","2019-12-08");
+
+insert into envio values("123e","2021-10-10","envio  al lugar 1");
+insert into envio values("124e","2021-10-11","envio al lugar 2");
+insert into envio values("125e","2021-10-12","envio al lugar 3");
+
+insert into materia_prima values("Madera de roble",500,"Madera de roble por toneladas","los madereros","123m","123i");
+insert into materia_prima values("Tela de nilon",1000,"Tela de nilon por kg","los teloneros","124m","124i");
+insert into materia_prima values("Colchones ortopedicos",500,"Colchones por unidades","los cameros","125m","125i");
+
+insert into pedido values("123p","2021-06-28","1100398919","1100398888","123e");
+insert into pedido values("124p","2021-08-28","1100398810","1112398910","124e");
+insert into pedido values("125p","2021-09-28","4100398912","4100398910","125e");
+insert into pedido values("126p","2021-10-28","1100398919","1100398888","123e");
+
+insert into articulo values("Almohada de One piece",1,"Almohada personalizada de onepiece",50000,"art1","123p");
+insert into articulo values("sabanas De oro",3,"Sabanas recubiertas de oro",900000,"art2","123p");
+
+insert into producto values("cama","Cama estandar",400000,90,"123pro","1100398910","4100398914","124i");
+insert into producto values("silla","silla pequeña",40000,20,"124pro","1100398888","1112398913","124i");
+insert into producto values("mesa","mesa ancha",500000,10,"125pro","1100398888","4100398914","123i");
+
+insert into factura values(3000000,"2021-07-27","4100398912","1100398888","123p");
+insert into factura values(2000000,"2021-07-27","1100398919","4100398910","124p");
+insert into factura values(1350000,"2021-07-27","1112398911","4100398910","125p");
+
+insert into pago values("123d","Abono",350000,"2021-06-29","4100398912","1100398888","123p");
+
+insert into producto_pedido values("123pro","123p","Cama en negro",1);
+
+insert into producto_operario values("1100398915","123pro");
+insert into producto_operario values("4100398918","123pro");
+insert into producto_operario values("1100398915","124pro");
+insert into producto_operario values("4100398918","125pro");
+
+insert into producto_materia_prima values("123pro","123m");
+insert into producto_materia_prima values("123pro","125m");
+insert into producto_materia_prima values("124pro","124m");
+insert into producto_materia_prima values("125pro","124m");
+
+insert into inventario_trabajador_inv values("123i","1100398888");
+insert into inventario_trabajador_inv values("124i","4100398910");
+
+insert into envio_trabajador_env values("123e","1100398910");
+insert into envio_trabajador_env values("123e","1112398910");
+insert into envio_trabajador_env values("123e","4100398910");
+
+insert into materia_prima_proveedor values("123m","123pr");
+insert into materia_prima_proveedor values("124m","126pr");
+insert into materia_prima_proveedor values("125m","125pr");
