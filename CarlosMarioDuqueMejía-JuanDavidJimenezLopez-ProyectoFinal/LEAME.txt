@@ -1,0 +1,16 @@
+Integrantes:
+Carlos Mario Duque Mejía
+Juan David Jiménez López
+________________________
+
+
+Uno de los correos y contraseña con los que debe de iniciar sesion en el programa.
+
+Supervisor Carlos
+abc@mail.com
+1234567890 
+
+Si da problemas al generar las graficas es porque las librerias que usa tendran el path errado por lo que se
+debera ir manualmente a llamar las librerias
+
+En la carpeta "resources" se encuentran las dos librerias necesarias para el funcionamiento de las graficas.
